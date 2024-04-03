@@ -1,4 +1,4 @@
-langcode: en
+langcode: vi
 status: true
 dependencies:
   module:
@@ -13,8 +13,8 @@ provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: 'Search form'
-  provider: search
+  label: 'Biểu mẫu tìm kiếm'
   label_display: '0'
+  provider: search
   page_id: ''
 visibility: {  }

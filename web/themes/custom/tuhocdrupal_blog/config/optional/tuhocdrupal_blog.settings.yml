@@ -1,0 +1,23 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/custom/tuhocdrupal_blog/logo.png
+favicon:
+  use_default: 1
+b5_top_container: 'container-fluid m-0'
+b5_top_container_config: ''
+b5_body_schema: none
+b5_body_bg_schema: none
+b5_navbar_schema: none
+b5_navbar_bg_schema: none
+b5_footer_schema: none
+b5_footer_bg_schema: none
+b5_bootswatch_theme: ''
+b5_bootstrap_select: 0
+subtheme_folder: themes/custom
+subtheme_name: 'Bootstrap 5 admin subtheme'
+subtheme_machine_name: bootstrap_subtheme

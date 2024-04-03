@@ -1,5 +1,5 @@
-langcode: en
-status: true
+langcode: vi
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -15,9 +15,9 @@ provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Footer
-  provider: system
+  label: 'Phần chân'
   label_display: '0'
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false

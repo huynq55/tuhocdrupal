@@ -1,4 +1,4 @@
-langcode: en
+langcode: vi
 status: true
 dependencies:
   theme:
@@ -12,8 +12,8 @@ plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: Tabs
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: true
 visibility: {  }
