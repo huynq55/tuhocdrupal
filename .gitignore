@@ -2,7 +2,7 @@ composer.lock
 vendor/
 web/sites/
 web/modules/contrib/
-themes/contrib/
+web/themes/contrib/
 web/core/
 web/web.config
 web/update.php
