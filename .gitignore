@@ -22,3 +22,7 @@ web/.eslintignore
 web/.csslintrc
 .gitattributes
 .editorconfig
+.idea/
+.sass-cache/
+style.css
+style.css.map
