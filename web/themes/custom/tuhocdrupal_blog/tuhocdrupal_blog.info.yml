@@ -1,0 +1,28 @@
+name: 'Tự học Drupal theme'
+type: theme
+description: 'Tự học Drupal theme subtheme based on Tự học Drupal theme theme.'
+core_version_requirement: '^8.9 || ^9 || ^10 || ^11'
+'base theme': bootstrap5_admin
+libraries:
+  - tuhocdrupal_blog/global-styling
+libraries-extend:
+  core/drupal.ajax:
+    - bootstrap5_admin/drupal.ajax
+  core/drupal.progress:
+    - bootstrap5_admin/drupal.progress
+  core/drupal.tabledrag:
+    - bootstrap5_admin/drupal.tabledrag
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+stylesheets-remove:
+  - '@bootstrap5_admin/css/style.css'
+libraries-override:
+  bootstrap5_admin/global-styling: false
