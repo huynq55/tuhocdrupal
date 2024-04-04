@@ -26,3 +26,4 @@ web/.csslintrc
 .sass-cache/
 style.css
 style.css.map
+!/web/sites/default/files/inline-images/*
