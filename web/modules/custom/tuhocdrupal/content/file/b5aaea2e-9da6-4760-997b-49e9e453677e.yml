@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b5aaea2e-9da6-4760-997b-49e9e453677e
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: "DALL·E 2024-04-04 08.37.43 - Illustrate a beginner's workstation setup with a computer screen displaying a Drupal installation page, including visible steps and a Drupal logo. The.webp"
+  uri:
+    -
+      value: "public://2024-04/DALL·E 2024-04-04 08.37.43 - Illustrate a beginner's workstation setup with a computer screen displaying a Drupal installation page, including visible steps and a Drupal logo. The.webp"
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 367166
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712194671

@@ -1,0 +1,1315 @@
+Subject: [PATCH] ui_default_content
+---
+Index: default_content/default_content.links.menu.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/default_content.links.menu.yml b/default_content/default_content.links.menu.yml
+new file mode 100644
+--- /dev/null	(date 1710103427260)
++++ b/default_content/default_content.links.menu.yml	(date 1710103427260)
+@@ -0,0 +1,5 @@
++default_content.admin.config:
++  title: Default content synchronization
++  description: Import and export your content.
++  parent: system.admin_config_development
++  route_name: default_content.default_content_import
+Index: default_content/src/Form/DefaultContentImportForm.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/src/Form/DefaultContentImportForm.php b/default_content/src/Form/DefaultContentImportForm.php
+new file mode 100644
+--- /dev/null	(date 1710111071864)
++++ b/default_content/src/Form/DefaultContentImportForm.php	(date 1710111071864)
+@@ -0,0 +1,188 @@
++<?php
++
++namespace Drupal\default_content\Form;
++
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Extension\ModuleExtensionList;
++use Drupal\Core\Extension\ModuleHandler;
++use Drupal\Core\Form\FormBase;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Serialization\Yaml;
++use Drupal\Core\Session\AccountInterface;
++use Drupal\Core\Url;
++use Drupal\default_content\ImporterInterface;
++use Drupal\default_content\Normalizer\ContentEntityNormalizerInterface;
++use Drupal\file\FileInterface;
++use Drupal\user\EntityOwnerInterface;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Provides a Default content form.
++ */
++class DefaultContentImportForm extends FormBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function __construct(
++    private readonly AccountInterface $currentUser,
++    private readonly EntityTypeManagerInterface $entityTypeManager,
++    private readonly ModuleHandler $moduleHandler,
++    private readonly ModuleExtensionList $moduleExtensionList,
++    private readonly ImporterInterface $import,
++    private readonly ContentEntityNormalizerInterface $contentEntityNormalizer,
++  ) {
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container) {
++    return new static(
++      $container->get('current_user'),
++      $container->get('entity_type.manager'),
++      $container->get('module_handler'),
++      $container->get('extension.list.module'),
++      $container->get('default_content.importer'),
++      $container->get('default_content.content_entity_normalizer'),
++    );
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getFormId(): string {
++    return 'default_content_default_content_import';
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildForm(array $form, FormStateInterface $form_state): array {
++    if ($this->moduleHandler->moduleExists('views_bulk_operations')) {
++      $form['export'] = [
++        '#type' => 'link',
++        '#title' => $this->t('Export default content'),
++        '#url' => Url::fromRoute('view.default_content_export_node.node'),
++        '#attributes' => ['class' => ['button', 'btn btn-primary']],
++      ];
++    }
++    $form['import'] = [
++      '#title' => $this->t('Paste your content here'),
++      '#type' => 'textarea',
++      '#description' => $this->t('Import a single content item by pasting its YAML structure into the text field'),
++      '#rows' => 24,
++    ];
++
++    $form['import_file'] = [
++      '#type' => 'file',
++      '#title' => $this->t('Or you can upload content file with YAML structure'),
++      '#description' => $this->t('Allowed types: @extensions.', ['@extensions' => 'yml']),
++      '#upload_validators' => [
++        'file_validate_extensions' => ['yml'],
++      ],
++    ];
++
++    $custom_modules = [];
++    $all_modules = $this->moduleExtensionList->reset()->getList();
++
++    // Remove obsolete modules.
++    $all_modules = array_filter($all_modules, function ($module) {
++      return !$module->isObsolete();
++    });
++    // Iterate through each module.
++    foreach ($all_modules as $module => $module_info) {
++      // Check if the module is a custom module.
++      $path = $module_info->getPathname() ?? '';
++      if (!str_starts_with($path, 'modules/contrib/') &&
++        !str_starts_with($path, 'core/modules/') &&
++        !str_starts_with($path, 'core/profiles/') &&
++        !str_starts_with($path, 'profiles/modules/')) {
++        $pathname = $module_info->getFileInfo()->getPathname();
++        $moduleInfo = Yaml::decode(file_get_contents($pathname));
++        $custom_modules[$module] = $moduleInfo['name'];
++      }
++    }
++    if (!empty($custom_modules)) {
++      $form['import_module'] = [
++        '#type' => 'select',
++        '#title' => $this->t('Or you can select module to import'),
++        '#options' => $custom_modules,
++        '#empty_option' => $this->t('- Select module -'),
++        '#description' => $this->t('It will looking for folder content'),
++      ];
++    }
++
++    $form['actions'] = [
++      '#type' => 'actions',
++      'submit' => [
++        '#type' => 'submit',
++        '#value' => $this->t('Import'),
++      ],
++    ];
++
++    return $form;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function validateForm(array &$form, FormStateInterface $form_state): void {
++    $file = file_save_upload('import_file', $form['import_file']['#upload_validators'], FALSE, 0);
++    if (!empty($file)) {
++      if ($file instanceof FileInterface) {
++        $form_state->set('file', $file);
++        $this->file = $file;
++      }
++    }
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state): void {
++    $values = $form_state->getValues();
++    $content = '';
++    if (!empty($values['import'])) {
++      $content = $values['import'];
++    }
++    if (!empty($values['import_file'])) {
++      if (!empty($this->file)) {
++        $file_content = file_get_contents($this->file->getFileUri());
++        if (!empty($file_content)) {
++          $content = $file_content;
++        }
++      }
++    }
++    if (!empty($content)) {
++      $yaml = Yaml::decode($content);
++      if (empty($yaml)) {
++        $this->messenger()->addStatus($this->t('The content is not validate.'));
++        return;
++      }
++      $entity = $this->contentEntityNormalizer->denormalize($yaml);
++      $entity->enforceIsNew(TRUE);
++      // Ensure that the entity is not owned by the anonymous user.
++      if ($entity instanceof EntityOwnerInterface && empty($entity->getOwnerId())) {
++        $user_storage = $this->entityTypeManager->getStorage('user');
++        $user = $user_storage->load($this->currentUser->id());
++        $entity->setOwner($user);
++      }
++      $entity->save();
++      $title = $entity->uuid();
++      foreach (['getLabel', 'getTitle', 'getName', 'getDisplayName'] as $method) {
++        if (method_exists($entity, $method)) {
++          $title = $entity->{$method}();
++          break;
++        }
++      }
++      $this->messenger()->addStatus($this->t('The content %title has been imported.', ['%title' => $title]));
++    }
++
++    if (!empty($values['import_module'])) {
++      $this->import->importContent($values['import_module']);
++      $this->messenger()->addStatus($this->t('The content of module %module has been imported.', ['%module' => $values['import_module']]));
++    }
++  }
++
++}
+Index: default_content/config/optional/views.view.default_content_export_taxonomy.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/config/optional/views.view.default_content_export_taxonomy.yml b/default_content/config/optional/views.view.default_content_export_taxonomy.yml
+new file mode 100644
+--- /dev/null	(date 1710111147783)
++++ b/default_content/config/optional/views.view.default_content_export_taxonomy.yml	(date 1710111147783)
+@@ -0,0 +1,283 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - taxonomy
++    - user
++    - views_bulk_operations
++id: default_content_export_taxonomy
++label: 'Default content export'
++module: views
++description: 'Default content export taxonomy'
++tag: ''
++base_table: taxonomy_term_field_data
++base_field: tid
++display:
++  default:
++    id: default
++    display_title: Default
++    display_plugin: default
++    position: 0
++    display_options:
++      title: 'Default content export'
++      fields:
++        views_bulk_operations_bulk_form:
++          id: views_bulk_operations_bulk_form
++          table: views
++          field: views_bulk_operations_bulk_form
++          relationship: none
++          group_type: group
++          admin_label: ''
++          plugin_id: views_bulk_operations_bulk_form
++          label: 'Views bulk operations'
++          exclude: false
++          alter:
++            alter_text: false
++            text: ''
++            make_link: false
++            path: ''
++            absolute: false
++            external: false
++            replace_spaces: false
++            path_case: none
++            trim_whitespace: false
++            alt: ''
++            rel: ''
++            link_class: ''
++            prefix: ''
++            suffix: ''
++            target: ''
++            nl2br: false
++            max_length: 0
++            word_boundary: true
++            ellipsis: true
++            more_link: false
++            more_link_text: ''
++            more_link_path: ''
++            strip_tags: false
++            trim: false
++            preserve_tags: ''
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: true
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          batch: true
++          batch_size: 10
++          form_step: true
++          ajax_loader: false
++          buttons: false
++          action_title: Action
++          clear_on_exposed: true
++          force_selection_info: false
++          selected_actions:
++            -
++              action_id: default_content_export
++              preconfiguration:
++                add_confirmation: false
++        name:
++          id: name
++          table: taxonomy_term_field_data
++          field: name
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: taxonomy_term
++          entity_field: name
++          plugin_id: term_name
++          label: Name
++          exclude: false
++          alter:
++            alter_text: false
++            make_link: false
++            absolute: false
++            word_boundary: false
++            ellipsis: false
++            strip_tags: false
++            trim: false
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: true
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          click_sort_column: value
++          type: string
++          settings:
++            link_to_entity: true
++          group_column: value
++          group_columns: {  }
++          group_rows: true
++          delta_limit: 0
++          delta_offset: 0
++          delta_reversed: false
++          delta_first_last: false
++          multi_type: separator
++          separator: ', '
++          field_api_classes: false
++          convert_spaces: false
++      pager:
++        type: mini
++        options:
++          offset: 0
++          items_per_page: 10
++          total_pages: null
++          id: 0
++          tags:
++            next: â€ºâ€º
++            previous: â€¹â€¹
++          expose:
++            items_per_page: false
++            items_per_page_label: 'Items per page'
++            items_per_page_options: '5, 10, 25, 50'
++            items_per_page_options_all: false
++            items_per_page_options_all_label: '- All -'
++            offset: false
++            offset_label: Offset
++      exposed_form:
++        type: basic
++        options:
++          submit_button: Apply
++          reset_button: false
++          reset_button_label: Reset
++          exposed_sorts_label: 'Sort by'
++          expose_sort_order: true
++          sort_asc_label: Asc
++          sort_desc_label: Desc
++      access:
++        type: perm
++        options:
++          perm: 'administer taxonomy'
++      cache:
++        type: tag
++        options: {  }
++      empty: {  }
++      sorts: {  }
++      arguments: {  }
++      filters:
++        status:
++          id: status
++          table: taxonomy_term_field_data
++          field: status
++          entity_type: taxonomy_term
++          entity_field: status
++          plugin_id: boolean
++          value: '1'
++          group: 1
++          expose:
++            operator: ''
++        vid:
++          id: vid
++          table: taxonomy_term_field_data
++          field: vid
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: taxonomy_term
++          entity_field: vid
++          plugin_id: bundle
++          operator: in
++          value: {  }
++          group: 1
++          exposed: true
++          expose:
++            operator_id: vid_op
++            label: Vocabulary
++            description: ''
++            use_operator: false
++            operator: vid_op
++            operator_limit_selection: false
++            operator_list: {  }
++            identifier: vid
++            required: false
++            remember: false
++            multiple: false
++            remember_roles:
++              authenticated: authenticated
++              anonymous: '0'
++              content_editor: '0'
++              administrator: '0'
++            reduce: false
++          is_grouped: false
++          group_info:
++            label: ''
++            description: ''
++            identifier: ''
++            optional: true
++            widget: select
++            multiple: false
++            remember: false
++            default_group: All
++            default_group_multiple: {  }
++            group_items: {  }
++      style:
++        type: table
++      row:
++        type: fields
++      query:
++        type: views_query
++        options:
++          query_comment: ''
++          disable_sql_rewrite: false
++          distinct: false
++          replica: false
++          query_tags: {  }
++      relationships: {  }
++      header: {  }
++      footer: {  }
++      display_extenders: {  }
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url
++        - url.query_args
++        - user.permissions
++      tags: {  }
++  taxonomy:
++    id: taxonomy
++    display_title: Page
++    display_plugin: page
++    position: 1
++    display_options:
++      display_extenders: {  }
++      path: admin/default-content/export/taxonomy
++      menu:
++        type: tab
++        title: 'Export taxonomy'
++        description: ''
++        weight: 0
++        expanded: false
++        menu_name: main
++        parent: ''
++        context: '0'
++      tab_options:
++        type: tab
++        title: ''
++        description: ''
++        weight: 0
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url
++        - url.query_args
++        - user.permissions
++      tags: {  }
+Index: default_content/default_content.routing.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/default_content.routing.yml b/default_content/default_content.routing.yml
+new file mode 100644
+--- /dev/null	(date 1710102825840)
++++ b/default_content/default_content.routing.yml	(date 1710102825840)
+@@ -0,0 +1,7 @@
++default_content.default_content_import:
++  path: '/admin/default-content/import'
++  defaults:
++    _title: 'Default Content Import'
++    _form: 'Drupal\default_content\Form\DefaultContentImportForm'
++  requirements:
++    _permission: 'import configuration'
+Index: default_content/config/optional/views.view.default_content_export_block.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/config/optional/views.view.default_content_export_block.yml b/default_content/config/optional/views.view.default_content_export_block.yml
+new file mode 100644
+--- /dev/null	(date 1710111147753)
++++ b/default_content/config/optional/views.view.default_content_export_block.yml	(date 1710111147753)
+@@ -0,0 +1,289 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - block_content
++    - user
++    - views_bulk_operations
++id: default_content_export_block
++label: 'Default content export'
++module: views
++description: 'Default content export block'
++tag: ''
++base_table: block_content_field_data
++base_field: id
++display:
++  default:
++    id: default
++    display_title: Default
++    display_plugin: default
++    position: 0
++    display_options:
++      title: 'Default content export block'
++      fields:
++        views_bulk_operations_bulk_form:
++          id: views_bulk_operations_bulk_form
++          table: views
++          field: views_bulk_operations_bulk_form
++          relationship: none
++          group_type: group
++          admin_label: ''
++          plugin_id: views_bulk_operations_bulk_form
++          label: ''
++          exclude: false
++          alter:
++            alter_text: false
++            text: ''
++            make_link: false
++            path: ''
++            absolute: false
++            external: false
++            replace_spaces: false
++            path_case: none
++            trim_whitespace: false
++            alt: ''
++            rel: ''
++            link_class: ''
++            prefix: ''
++            suffix: ''
++            target: ''
++            nl2br: false
++            max_length: 0
++            word_boundary: true
++            ellipsis: true
++            more_link: false
++            more_link_text: ''
++            more_link_path: ''
++            strip_tags: false
++            trim: false
++            preserve_tags: ''
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: false
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          batch: true
++          batch_size: 10
++          form_step: true
++          ajax_loader: false
++          buttons: false
++          action_title: Action
++          clear_on_exposed: true
++          force_selection_info: false
++          selected_actions:
++            -
++              action_id: default_content_export
++              preconfiguration:
++                add_confirmation: false
++        info:
++          id: info
++          table: block_content_field_data
++          field: info
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: null
++          entity_field: info
++          plugin_id: field
++          label: ''
++          exclude: false
++          alter:
++            alter_text: false
++            text: ''
++            make_link: false
++            path: ''
++            absolute: false
++            external: false
++            replace_spaces: false
++            path_case: none
++            trim_whitespace: false
++            alt: ''
++            rel: ''
++            link_class: ''
++            prefix: ''
++            suffix: ''
++            target: ''
++            nl2br: false
++            max_length: 0
++            word_boundary: true
++            ellipsis: true
++            more_link: false
++            more_link_text: ''
++            more_link_path: ''
++            strip_tags: false
++            trim: false
++            preserve_tags: ''
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: true
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          click_sort_column: value
++          type: string
++          settings: {  }
++          group_column: value
++          group_columns: {  }
++          group_rows: true
++          delta_limit: 0
++          delta_offset: 0
++          delta_reversed: false
++          delta_first_last: false
++          multi_type: separator
++          separator: ', '
++          field_api_classes: false
++      pager:
++        type: mini
++        options:
++          offset: 0
++          items_per_page: 10
++          total_pages: null
++          id: 0
++          tags:
++            next: â€ºâ€º
++            previous: â€¹â€¹
++          expose:
++            items_per_page: false
++            items_per_page_label: 'Items per page'
++            items_per_page_options: '5, 10, 25, 50'
++            items_per_page_options_all: false
++            items_per_page_options_all_label: '- All -'
++            offset: false
++            offset_label: Offset
++      exposed_form:
++        type: basic
++        options:
++          submit_button: Apply
++          reset_button: false
++          reset_button_label: Reset
++          exposed_sorts_label: 'Sort by'
++          expose_sort_order: true
++          sort_asc_label: Asc
++          sort_desc_label: Desc
++      access:
++        type: perm
++        options:
++          perm: 'administer block content'
++      cache:
++        type: tag
++        options: {  }
++      empty: {  }
++      sorts: {  }
++      arguments: {  }
++      filters:
++        status:
++          id: status
++          table: block_content_field_data
++          field: status
++          entity_type: block_content
++          entity_field: status
++          plugin_id: boolean
++          value: '1'
++          group: 1
++          expose:
++            operator: ''
++        reusable:
++          id: reusable
++          table: block_content_field_data
++          field: reusable
++          entity_type: block_content
++          entity_field: reusable
++          plugin_id: boolean
++          value: '1'
++      style:
++        type: table
++        options:
++          grouping: {  }
++          row_class: ''
++          default_row_class: true
++          columns:
++            views_bulk_operations_bulk_form: views_bulk_operations_bulk_form
++            info: info
++          default: '-1'
++          info:
++            views_bulk_operations_bulk_form:
++              align: ''
++              separator: ''
++              empty_column: false
++              responsive: ''
++            info:
++              sortable: false
++              default_sort_order: asc
++              align: ''
++              separator: ''
++              empty_column: false
++              responsive: ''
++          override: true
++          sticky: false
++          summary: ''
++          empty_table: false
++          caption: ''
++          description: ''
++      row:
++        type: fields
++        options:
++          default_field_elements: true
++          inline: {  }
++          separator: ''
++          hide_empty: false
++      query:
++        type: views_query
++        options:
++          query_comment: ''
++          disable_sql_rewrite: false
++          distinct: false
++          replica: false
++          query_tags: {  }
++      relationships: {  }
++      header: {  }
++      footer: {  }
++      display_extenders: {  }
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url.query_args
++        - user.permissions
++      tags: {  }
++  block:
++    id: block
++    display_title: block
++    display_plugin: page
++    position: 1
++    display_options:
++      display_description: ''
++      display_extenders: {  }
++      path: admin/default-content/export/block
++      menu:
++        type: tab
++        title: 'Export block'
++        description: ''
++        weight: 0
++        expanded: false
++        menu_name: main
++        parent: ''
++        context: '0'
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url.query_args
++        - user.permissions
++      tags: {  }
+Index: default_content/config/optional/views.view.default_content_export_node.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/config/optional/views.view.default_content_export_node.yml b/default_content/config/optional/views.view.default_content_export_node.yml
+new file mode 100644
+--- /dev/null	(date 1710111147768)
++++ b/default_content/config/optional/views.view.default_content_export_node.yml	(date 1710111147768)
+@@ -0,0 +1,301 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - node
++    - user
++    - views_bulk_operations
++id: default_content_export_node
++label: 'Default content export'
++module: views
++description: 'Default content export node'
++tag: ''
++base_table: node_field_data
++base_field: nid
++display:
++  default:
++    id: default
++    display_title: Default
++    display_plugin: default
++    position: 0
++    display_options:
++      title: 'Default content Node'
++      fields:
++        views_bulk_operations_bulk_form:
++          id: views_bulk_operations_bulk_form
++          table: views
++          field: views_bulk_operations_bulk_form
++          relationship: none
++          group_type: group
++          admin_label: ''
++          plugin_id: views_bulk_operations_bulk_form
++          label: 'Views bulk operations'
++          exclude: false
++          alter:
++            alter_text: false
++            text: ''
++            make_link: false
++            path: ''
++            absolute: false
++            external: false
++            replace_spaces: false
++            path_case: none
++            trim_whitespace: false
++            alt: ''
++            rel: ''
++            link_class: ''
++            prefix: ''
++            suffix: ''
++            target: ''
++            nl2br: false
++            max_length: 0
++            word_boundary: true
++            ellipsis: true
++            more_link: false
++            more_link_text: ''
++            more_link_path: ''
++            strip_tags: false
++            trim: false
++            preserve_tags: ''
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: true
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          batch: true
++          batch_size: 10
++          form_step: true
++          ajax_loader: false
++          buttons: false
++          action_title: Action
++          clear_on_exposed: true
++          force_selection_info: false
++          selected_actions:
++            -
++              action_id: default_content_export
++              preconfiguration:
++                add_confirmation: false
++        title:
++          id: title
++          table: node_field_data
++          field: title
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: node
++          entity_field: title
++          plugin_id: field
++          label: Title
++          exclude: false
++          alter:
++            alter_text: false
++            make_link: false
++            absolute: false
++            word_boundary: false
++            ellipsis: false
++            strip_tags: false
++            trim: false
++            html: false
++          element_type: ''
++          element_class: ''
++          element_label_type: ''
++          element_label_class: ''
++          element_label_colon: true
++          element_wrapper_type: ''
++          element_wrapper_class: ''
++          element_default_classes: true
++          empty: ''
++          hide_empty: false
++          empty_zero: false
++          hide_alter_empty: true
++          click_sort_column: value
++          type: string
++          settings:
++            link_to_entity: true
++          group_column: value
++          group_columns: {  }
++          group_rows: true
++          delta_limit: 0
++          delta_offset: 0
++          delta_reversed: false
++          delta_first_last: false
++          multi_type: separator
++          separator: ', '
++          field_api_classes: false
++      pager:
++        type: mini
++        options:
++          offset: 0
++          items_per_page: 10
++          total_pages: null
++          id: 0
++          tags:
++            next: â€ºâ€º
++            previous: â€¹â€¹
++          expose:
++            items_per_page: false
++            items_per_page_label: 'Items per page'
++            items_per_page_options: '5, 10, 25, 50'
++            items_per_page_options_all: false
++            items_per_page_options_all_label: '- All -'
++            offset: false
++            offset_label: Offset
++      exposed_form:
++        type: basic
++        options:
++          submit_button: Apply
++          reset_button: false
++          reset_button_label: Reset
++          exposed_sorts_label: 'Sort by'
++          expose_sort_order: true
++          sort_asc_label: Asc
++          sort_desc_label: Desc
++      access:
++        type: perm
++        options:
++          perm: 'administer content types'
++      cache:
++        type: tag
++        options: {  }
++      empty: {  }
++      sorts:
++        created:
++          id: created
++          table: node_field_data
++          field: created
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: node
++          entity_field: created
++          plugin_id: date
++          order: DESC
++          expose:
++            label: ''
++            field_identifier: ''
++          exposed: false
++          granularity: second
++      arguments: {  }
++      filters:
++        status:
++          id: status
++          table: node_field_data
++          field: status
++          entity_type: node
++          entity_field: status
++          plugin_id: boolean
++          value: '1'
++          group: 1
++          expose:
++            operator: ''
++        type:
++          id: type
++          table: node_field_data
++          field: type
++          relationship: none
++          group_type: group
++          admin_label: ''
++          entity_type: node
++          entity_field: type
++          plugin_id: bundle
++          operator: in
++          value: {  }
++          group: 1
++          exposed: true
++          expose:
++            operator_id: type_op
++            label: 'Content type'
++            description: ''
++            use_operator: false
++            operator: type_op
++            operator_limit_selection: false
++            operator_list: {  }
++            identifier: type
++            required: false
++            remember: false
++            multiple: false
++            remember_roles:
++              authenticated: authenticated
++              anonymous: '0'
++              content_editor: '0'
++              administrator: '0'
++            reduce: false
++          is_grouped: false
++          group_info:
++            label: ''
++            description: ''
++            identifier: ''
++            optional: true
++            widget: select
++            multiple: false
++            remember: false
++            default_group: All
++            default_group_multiple: {  }
++            group_items: {  }
++      style:
++        type: table
++      row:
++        type: fields
++      query:
++        type: views_query
++        options:
++          query_comment: ''
++          disable_sql_rewrite: false
++          distinct: false
++          replica: false
++          query_tags: {  }
++      relationships: {  }
++      header: {  }
++      footer: {  }
++      display_extenders: {  }
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url
++        - url.query_args
++        - 'user.node_grants:view'
++        - user.permissions
++      tags: {  }
++  node:
++    id: node
++    display_title: 'Default content node'
++    display_plugin: page
++    position: 1
++    display_options:
++      display_description: ''
++      display_extenders: {  }
++      path: admin/default-content/export
++      menu:
++        type: 'default tab'
++        title: 'Export node'
++        description: ''
++        weight: 0
++        expanded: false
++        menu_name: main
++        parent: ''
++        context: '0'
++      tab_options:
++        type: none
++        title: ''
++        description: ''
++        weight: 0
++    cache_metadata:
++      max-age: 0
++      contexts:
++        - 'languages:language_content'
++        - 'languages:language_interface'
++        - url
++        - url.query_args
++        - 'user.node_grants:view'
++        - user.permissions
++      tags: {  }
+Index: default_content/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/README.md b/default_content/README.md
+--- a/default_content/README.md	(revision 9efd1d5481f02cca4c131c1bd467a49d517d9800)
++++ b/default_content/README.md	(date 1710111347510)
+@@ -153,9 +153,14 @@
+     - a608987c-1b74-442b-b900-a54f40cda661
+ ```
+
+-## To do
++## Import / Export
+
+-UI for easily exporting?
++Go to Administration / Configuration / Development / Default content
++(/admin/default-content/import)
++for export you must install module [View bulk operation](https://www.drupal.org/project/views_bulk_operations)
++and then go to /admin/default-content/export
++By default, it exports with entity Node, block_content, taxonomy_term.
++You can create your own entity with views & add VBO default content
+
+ [1]: https://www.drupal.org/project/default_content "Default Content"
+ [3]: https://www.drupal.org/docs/8/core/modules/serialization "Serialization module"
+Index: default_content/src/Plugin/Action/DefaultContentExport.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/default_content/src/Plugin/Action/DefaultContentExport.php b/default_content/src/Plugin/Action/DefaultContentExport.php
+new file mode 100644
+--- /dev/null	(date 1710102074430)
++++ b/default_content/src/Plugin/Action/DefaultContentExport.php	(date 1710102074430)
+@@ -0,0 +1,145 @@
++<?php
++
++namespace Drupal\default_content\Plugin\Action;
++
++use Drupal\Core\Access\AccessResultInterface;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Extension\ModuleExtensionList;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
++use Drupal\Core\Serialization\Yaml;
++use Drupal\Core\Session\AccountInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\default_content\ExporterInterface;
++use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Provides a Default content export action.
++ *
++ * @Action(
++ *   id = "default_content_export",
++ *   label = @Translation("Default content export"),
++ *   type = "",
++ *   category = @Translation("Export"),
++ * )
++ *
++ * @DCG
++ * For updating entity fields consider extending FieldUpdateActionBase.
++ * @see \Drupal\Core\Field\FieldUpdateActionBase
++ *
++ */
++
++class DefaultContentExport extends ViewsBulkOperationsActionBase implements ContainerFactoryPluginInterface {
++
++  use StringTranslationTrait;
++
++  /**
++   * {@inheritdoc}
++   */
++  public function __construct(
++    array $configuration,
++    $plugin_id,
++    $plugin_definition,
++    private readonly EntityTypeManagerInterface $entityTypeManager,
++    private readonly ModuleExtensionList $moduleExtensionList,
++    private readonly ExporterInterface $exporter,
++  ) {
++    parent::__construct($configuration, $plugin_id, $plugin_definition);
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
++    return new self(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $container->get('entity_type.manager'),
++      $container->get('extension.list.module'),
++      $container->get('default_content.exporter'),
++    );
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function access($entity, AccountInterface $account = NULL, $return_as_object = FALSE): AccessResultInterface|bool {
++    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
++    $access = $entity->access('update', $account, TRUE);
++    return $return_as_object ? $access : $access->isAllowed();
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function executeMultiple(array $objects) {
++    $results = [];
++    $custom_module = $this->configuration['custom_module'];
++    $module = $this->moduleExtensionList->reset()->getList()[$custom_module];
++    $pathname = $module->getFileInfo()->getPathname();
++    $folder = dirname($pathname) . DIRECTORY_SEPARATOR . 'content';
++    $entity_type_id = NULL;
++    foreach ($objects as $entity) {
++      $entity_type_id = $entity->getEntityTypeId();
++      $content = $this->exporter->exportContentWithReferences($entity_type_id, $entity->id(), $folder);
++      $results[] = array_key_first(current($content));
++    }
++    if (!empty($results)) {
++      // Rewrite default_content to module.info.
++      $moduleInfo = Yaml::decode(file_get_contents($pathname));
++      if (!isset($moduleInfo['default_content'][$entity_type_id])) {
++        $moduleInfo['default_content'][$entity_type_id] = [];
++      }
++      $moduleInfo['default_content'][$entity_type_id] = array_merge($moduleInfo['default_content'][$entity_type_id], $results);
++      file_put_contents($pathname, Yaml::encode($moduleInfo));
++      array_unshift($results, implode(DIRECTORY_SEPARATOR, [
++        $custom_module,
++        'content',
++        $entity_type_id,
++      ]));
++    }
++    return $results;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildConfigurationForm(array $form, FormStateInterface $form_state, array $form_data = []) {
++    $custom_modules = [];
++    $all_modules = $this->moduleExtensionList->reset()->getList();
++
++    // Remove obsolete modules.
++    $all_modules = array_filter($all_modules, function ($module) {
++      return !$module->isObsolete();
++    });
++    // Iterate through each module.
++    foreach ($all_modules as $module => $module_info) {
++      // Check if the module is a custom module.
++      $path = $module_info->getPathname() ?? '';
++      if (!str_starts_with($path, 'modules/contrib/') &&
++        !str_starts_with($path, 'core/modules/') &&
++        !str_starts_with($path, 'core/profiles/') &&
++        !str_starts_with($path, 'profiles/modules/')) {
++        $pathname = $module_info->getFileInfo()->getPathname();
++        $moduleInfo = Yaml::decode(file_get_contents($pathname));
++        $custom_modules[$module] = $moduleInfo['name'];
++      }
++    }
++    $form['custom_module'] = [
++      '#type' => 'select',
++      '#title' => $this->t('Select module to export'),
++      '#options' => $custom_modules,
++    ];
++
++    return $form;
++  }
++
++  /**
++   * {@inheritDoc}
++   */
++  public function execute() {
++  }
++
++}
