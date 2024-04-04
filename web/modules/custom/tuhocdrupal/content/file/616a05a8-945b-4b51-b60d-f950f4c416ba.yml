@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 616a05a8-945b-4b51-b60d-f950f4c416ba
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-04 22.45.37 - Illustrate a web developer standing in front of a large computer screen displaying a complex configuration interface. The screen is filled with variou.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-04 22.45.37 - Illustrate a web developer standing in front of a large computer screen displaying a complex configuration interface. The screen is filled with variou.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 376628
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712245558

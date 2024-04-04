@@ -1,0 +1,80 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: dd00797b-82d4-462b-b687-79d1910a4ba9
+  bundle: article
+  default_langcode: vi
+  depends:
+    616a05a8-945b-4b51-b60d-f950f4c416ba: file
+    afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1: taxonomy_term
+    9472d8bd-56a6-46b9-b681-68a7609f3424: taxonomy_term
+    c39e6969-f28c-46e2-8e74-60eee5c3ba78: taxonomy_term
+    a8b78dff-5697-4bf9-a55e-65ccf9fe4e2b: taxonomy_term
+    cb3ec2b8-82d0-480e-ae1a-87c345a152ab: taxonomy_term
+    35557e70-93fc-4148-b255-d9827ca25fbf: taxonomy_term
+    fae3595f-4bdf-42c9-b260-f063edf0cd6e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Khám Phá Sức Mạnh Của Drupal: Xuất và Quản Lý Cấu Hình Hiệu Quả'
+  created:
+    -
+      value: 1712242890
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /kham-pha-suc-manh-cua-drupal-xuat-va-quan-ly-cau-hinh-hieu-qua.html
+      langcode: vi
+      pathauto: 1
+  body:
+    -
+      value: '<p>Chào mọi người, hôm nay chúng ta lại cùng nhau khám phá một khía cạnh thú vị của Drupal: việc xuất và lưu trữ cấu hình. Đối với những bạn mới tiếp xúc, việc kéo và thả trong Drupal có vẻ quá đơn giản, thậm chí có thể không thực sự cảm thấy giống như đang lập trình. Tuy nhiên, Drupal không chỉ dừng lại ở mức độ hỗ trợ kéo thả. Thực tế, Drupal còn cung cấp khả năng xuất cấu hình, một tính năng mạnh mẽ mà bất kỳ nhà phát triển Drupal nào cũng cần nắm vững. Mỗi thành phần bạn thấy trên hệ thống đều được quản lý thông qua cấu hình. Trong khi người dùng cuối có thể không cần phải lo lắng về việc xuất cấu hình, một nhà phát triển chuyên nghiệp sẽ coi việc này là cực kỳ quan trọng. Lý do là việc lưu giữ cấu hình không chỉ giúp bạn theo dõi các thay đổi trên trang web một cách hiệu quả mà còn cho phép quản lý dễ dàng thông qua các công cụ quản lý mã nguồn.</p><h2>Xuất cấu hình bằng Configuration synchronization</h2><div class="flex flex-grow flex-col max-w-full"><div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" data-message-author-role="assistant" data-message-id="b2ab09dd-464e-4b51-8738-f632845a0917"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Xuất cấu hình trong Drupal có thể được thực hiện một cách thuận tiện và hiệu quả thông qua tính năng Synchronization. Đối với việc xuất từng cấu hình riêng lẻ, bạn có thể dễ dàng truy cập qua đường dẫn:</p><pre><code class="language-plaintext">/admin/config/development/configuration/single/export</code></pre><p>Nếu muốn xuất toàn bộ cấu hình của website Drupal, đường dẫn bạn cần là:</p><pre><code class="language-plaintext">/admin/config/development/configuration/full/export</code></pre><p>Đây được xem là phương pháp cơ bản và nhanh chóng nhất để thực hiện việc xuất cấu hình trên Drupal.</p><h2>Xuất cấu hình bằng module Features</h2><p>Bên cạnh đó, việc sử dụng module Features là một phương pháp tiên tiến hơn, giúp việc xuất và quản lý cấu hình trở nên linh hoạt hơn. Bạn tìm hiểu module Features tại <a href="https://www.drupal.org/project/features">đây</a> và cài đặt nó thông qua Composer. Sau khi cài đặt, bạn có thể truy cập vào Features qua đường link:</p><pre><code class="language-plaintext">/admin/config/development/features</code></pre><p>Nếu bạn đã có sẵn một custom module được tạo bằng Drush, chỉ cần thêm file <em><strong>ten_module.features.yml</strong></em> với nội dung <em><strong>required: true</strong></em> vào thư mục gốc của module. Điều này sẽ biến module của bạn thành một Feature, mở ra khả năng quản lý cấu hình một cách mạnh mẽ và linh động.</p><p>Dưới đây là hình ảnh minh họa cho một module của tôi, mà Features đã xác định là một feature. Bạn có thể lựa chọn các tùy chỉnh trong khung bên phải. Khi đã hoàn tất việc chọn lựa, bạn có thể nhấn vào <em><strong>Download Archive</strong></em> để tải về thư mục cấu hình, hoặc nhấn <em><strong>Write</strong></em> để lưu cấu hình trực tiếp vào module.</p><img src="/sites/default/files/inline-images/tuhocdrupal%20feature.png" data-entity-uuid="1fbc1b15-5256-42cc-869a-6bfb2ab9bfe9" data-entity-type="file" alt="a feature in Drupal" width="1839" height="886"><h2>Phục hồi cấu hình đã thay đổi bằng Features</h2><p>Trong quá trình làm việc với Drupal, có thể do sơ ý hoặc không ý thức được, bạn có thể thực hiện những thay đổi không mong muốn đối với cấu hình của Drupal. Một lý do đơn giản là cấu hình của bạn đã được lưu trữ trong mã nguồn, do đó Features có khả năng hỗ trợ bạn phục hồi lại các cấu hình này cho trang web một cách thuận tiện. Như hình ảnh dưới đây cho thấy, có hai cấu hình đã được Features nhận diện là đã thay đổi.</p><img src="/sites/default/files/inline-images/image_0.png" data-entity-uuid="62f16ae5-861d-4046-ac14-bbe4b87f6b90" data-entity-type="file" alt="Drupal configurations changed" width="1826" height="561"><p>Chúng ta vừa đi qua một tính năng vô cùng mạnh mẽ của Drupal, đó là khả năng xuất cấu hình. Trong giới hạn của bài viết này, không thể đề cập đến tất cả các khía cạnh liên quan đến quy trình xuất cấu hình, nhưng tôi hy vọng rằng những hướng dẫn đã cung cấp sẽ giúp bạn có cái nhìn sâu sắc hơn về vấn đề này.</p></div></div></div>'
+      format: full_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1712243281
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: 616a05a8-945b-4b51-b60d-f950f4c416ba
+      alt: 'Drupal export import configuration'
+      title: ''
+      width: 1024
+      height: 1024
+  field_tags:
+    -
+      entity: afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1
+    -
+      entity: 9472d8bd-56a6-46b9-b681-68a7609f3424
+    -
+      entity: c39e6969-f28c-46e2-8e74-60eee5c3ba78
+    -
+      entity: a8b78dff-5697-4bf9-a55e-65ccf9fe4e2b
+    -
+      entity: cb3ec2b8-82d0-480e-ae1a-87c345a152ab
+    -
+      entity: 35557e70-93fc-4148-b255-d9827ca25fbf
+    -
+      entity: fae3595f-4bdf-42c9-b260-f063edf0cd6e

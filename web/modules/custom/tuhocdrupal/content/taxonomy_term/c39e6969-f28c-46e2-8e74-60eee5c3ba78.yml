@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1
+  uuid: c39e6969-f28c-46e2-8e74-60eee5c3ba78
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: Drupal
+      value: ConfigurationManagement
   weight:
     -
       value: 0
@@ -22,6 +22,6 @@ default:
       value: true
   path:
     -
-      alias: /drupal.tag
+      alias: /configurationmanagement.tag
       langcode: vi
       pathauto: 1
