@@ -29,5 +29,5 @@ web/.csslintrc
 .editorconfig
 .idea/
 .sass-cache/
-style.css
-style.css.map
+#style.css
+#style.css.map
