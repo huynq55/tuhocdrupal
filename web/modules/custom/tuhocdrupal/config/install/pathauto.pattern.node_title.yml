@@ -1,0 +1,21 @@
+langcode: vi
+status: true
+dependencies:
+  module:
+    - node
+id: node_title
+label: 'Tiêu đề nội dung'
+type: 'canonical_entities:node'
+pattern: '[node:title].html'
+selection_criteria:
+  fb9dea11-4896-4b30-bb52-a111209d334d:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: fb9dea11-4896-4b30-bb52-a111209d334d
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }

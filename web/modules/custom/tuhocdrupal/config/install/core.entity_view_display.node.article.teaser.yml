@@ -1,4 +1,4 @@
-langcode: en
+langcode: vi
 status: true
 dependencies:
   config:

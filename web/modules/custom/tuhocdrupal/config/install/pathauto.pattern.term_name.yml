@@ -1,0 +1,21 @@
+langcode: vi
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: term_name
+label: 'Tên thẻ đánh dấu'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name].tag'
+selection_criteria:
+  be2be499-a5b5-4705-8a35-c86ffae2e59d:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: be2be499-a5b5-4705-8a35-c86ffae2e59d
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tags: tags
+selection_logic: and
+weight: -5
+relationships: {  }
