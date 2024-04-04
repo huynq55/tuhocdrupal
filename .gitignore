@@ -1,6 +1,11 @@
 composer.lock
 vendor/
-web/sites/
+web/sites/*
+!/web/sites/default/
+web/sites/default/*
+!/web/sites/default/files
+/web/sites/default/files/*
+!/web/sites/default/files/inline-images
 web/modules/contrib/
 web/themes/contrib/
 web/core/
@@ -26,4 +31,3 @@ web/.csslintrc
 .sass-cache/
 style.css
 style.css.map
-!/web/sites/default/files/inline-images/*
