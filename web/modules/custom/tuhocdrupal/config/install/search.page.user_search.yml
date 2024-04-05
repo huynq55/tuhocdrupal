@@ -1,0 +1,11 @@
+langcode: vi
+status: false
+dependencies:
+  module:
+    - user
+id: user_search
+label: 'Người dùng'
+path: user
+weight: 0
+plugin: user_search
+configuration: {  }
