@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: ef10aec4-e06b-44ef-a0d2-9796b1d9cd70
+  bundle: tags
+  default_langcode: vi
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: DrupalModules
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /drupalmodules.tag
+      langcode: vi
+      pathauto: 1

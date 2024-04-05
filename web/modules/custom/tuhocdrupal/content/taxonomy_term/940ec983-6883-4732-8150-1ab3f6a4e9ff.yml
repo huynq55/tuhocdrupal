@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 940ec983-6883-4732-8150-1ab3f6a4e9ff
+  bundle: tags
+  default_langcode: vi
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: DrupalContentManagement
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /drupalcontentmanagement.tag
+      langcode: vi
+      pathauto: 1

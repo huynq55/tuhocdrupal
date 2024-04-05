@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 0f3afa68-e236-4a05-aed5-b214ac1b1c67
+  bundle: tags
+  default_langcode: vi
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: CMSOptimization
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /cmsoptimization.tag
+      langcode: vi
+      pathauto: 1

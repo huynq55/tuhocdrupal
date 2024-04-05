@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 65eb0462-4f4f-4d4b-95c3-d1c02f13768a
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-05 16.44.30 - Một lập trình viên Drupal đang ngồi trước máy tính, màn hình hiển thị giao diện của module default_content với các tab như export , import , và da.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-05 16.44.30 - Một lập trình viên Drupal đang ngồi trước máy tính, màn hình hiển thị giao diện của module default_content với các tab như export , import , và da.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 188062
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712310281

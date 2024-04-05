@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 8896bcb7-fe39-44cb-9174-610d9670c088
+  bundle: tags
+  default_langcode: vi
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: DefaultContentModule
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /defaultcontentmodule.tag
+      langcode: vi
+      pathauto: 1
