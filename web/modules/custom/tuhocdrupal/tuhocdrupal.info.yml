@@ -10,6 +10,7 @@ dependencies:
   - redis
   - lite_speed_cache
   - pathauto
+  - metatag
 default_content:
   file:
     - b5aaea2e-9da6-4760-997b-49e9e453677e
