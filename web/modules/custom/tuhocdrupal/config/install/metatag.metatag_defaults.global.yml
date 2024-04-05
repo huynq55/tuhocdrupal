@@ -1,0 +1,9 @@
+langcode: vi
+status: true
+dependencies: {  }
+id: global
+label: Chung
+tags:
+  canonical_url: '[current-page:url]'
+  google_site_verification: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
+  title: '[current-page:title] | [site:name]'
