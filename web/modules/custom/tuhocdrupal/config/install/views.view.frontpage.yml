@@ -410,7 +410,7 @@ display:
           expose:
             operator_id: keys_op
             label: 'Từ khóa tìm kiếm'
-            description: ''
+            description: 'Sử dụng ngoặc kép để tìm kiếm chính xác.'
             use_operator: false
             operator: keys_op
             operator_limit_selection: false

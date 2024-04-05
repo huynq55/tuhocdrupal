@@ -1,0 +1,11 @@
+langcode: vi
+status: false
+dependencies:
+  module:
+    - help
+id: help_search
+label: 'Trợ giúp'
+path: help
+weight: 0
+plugin: help_search
+configuration: {  }
