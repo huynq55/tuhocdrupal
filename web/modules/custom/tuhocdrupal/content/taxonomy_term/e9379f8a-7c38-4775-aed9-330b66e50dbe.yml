@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: 039db5d3-fd09-46f2-a3cb-37bdc7424431
+  uuid: e9379f8a-7c38-4775-aed9-330b66e50dbe
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: CodingBestPractices
+      value: ModuleCustomization
   weight:
     -
       value: 0
@@ -22,6 +22,6 @@ default:
       value: true
   path:
     -
-      alias: /codingbestpractices.tag
+      alias: /modulecustomization.tag
       langcode: vi
       pathauto: 1

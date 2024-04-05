@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: 039db5d3-fd09-46f2-a3cb-37bdc7424431
+  uuid: 93ad0d4a-ec5d-4815-9416-f2e623712ee7
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: CodingBestPractices
+      value: PatchManagement
   weight:
     -
       value: 0
@@ -22,6 +22,6 @@ default:
       value: true
   path:
     -
-      alias: /codingbestpractices.tag
+      alias: /patchmanagement.tag
       langcode: vi
       pathauto: 1

@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: 039db5d3-fd09-46f2-a3cb-37bdc7424431
+  uuid: 592f7e54-da6e-4c87-af9c-04f57f00d9a0
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: CodingBestPractices
+      value: cweagansComposerPatches
   weight:
     -
       value: 0
@@ -22,6 +22,6 @@ default:
       value: true
   path:
     -
-      alias: /codingbestpractices.tag
+      alias: /cweaganscomposerpatches.tag
       langcode: vi
       pathauto: 1

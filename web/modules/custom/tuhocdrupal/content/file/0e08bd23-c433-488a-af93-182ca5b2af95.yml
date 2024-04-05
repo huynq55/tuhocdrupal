@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0e08bd23-c433-488a-af93-182ca5b2af95
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-05 12.54.31 - A visual representation of a Drupal developer workspace where the developer is managing patches on Drupal modules and themes using the cweagans_compos.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-05 12.54.31 - A visual representation of a Drupal developer workspace where the developer is managing patches on Drupal modules and themes using the cweagans_compos.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 398242
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712296508
