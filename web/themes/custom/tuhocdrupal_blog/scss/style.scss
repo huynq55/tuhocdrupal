@@ -9,3 +9,15 @@
   width: 150px;
   height: 150px;
 }
+
+.count-circle {
+  display: inline-block;
+  width: 20px; /* Điều chỉnh kích thước vòng tròn */
+  height: 20px; /* Điều chỉnh kích thước vòng tròn */
+  line-height: 20px; /* Đảm bảo số lượng nằm giữa vòng tròn */
+  text-align: center;
+  border-radius: 50%; /* Tạo hình tròn */
+  background-color: #f0f0f0; /* Màu nền của vòng tròn */
+  color: #333; /* Màu của số lượng */
+  font-weight: bold; /* Đậm chữ */
+}
