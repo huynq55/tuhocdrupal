@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e72449c4-4721-410e-9f1d-57939cb97f4e
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-06 12.14.59 - An illustration showing a web developer sitting at a desk, surrounded by computer screens displaying code and a web page. One of the screens is focuse.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-06 12.14.59 - An illustration showing a web developer sitting at a desk, surrounded by computer screens displaying code and a web page. One of the screens is focuse.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 353136
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712380524

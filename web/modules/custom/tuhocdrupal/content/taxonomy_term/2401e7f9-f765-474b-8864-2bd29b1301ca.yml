@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: ef10aec4-e06b-44ef-a0d2-9796b1d9cd70
+  uuid: 2401e7f9-f765-474b-8864-2bd29b1301ca
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: DrupalModules
+      value: DrupalSEO
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'DrupalModules | Tự học Drupal'
+        content: 'DrupalSEO | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/drupalmodules.tag'
+        href: 'http://tuhocdrupal.localhost/drupalseo.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /drupalmodules.tag
+      alias: /drupalseo.tag
       langcode: vi
       pathauto: 1
