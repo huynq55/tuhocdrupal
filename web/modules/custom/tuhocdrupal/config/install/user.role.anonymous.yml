@@ -2,7 +2,7 @@ langcode: vi
 status: true
 dependencies:
   config:
-    - filter.format.restricted_html
+    - filter.format.full_html
   module:
     - comment
     - contact
@@ -21,4 +21,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
-  - 'use text format restricted_html'
+  - 'use text format full_html'
