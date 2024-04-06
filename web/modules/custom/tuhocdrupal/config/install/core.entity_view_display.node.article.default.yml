@@ -9,6 +9,7 @@ dependencies:
     - image.style.wide
     - node.type.article
   module:
+    - entity_reference_count_formatter
     - image
     - text
     - user
@@ -36,10 +37,10 @@ content:
     weight: 0
     region: content
   field_tags:
-    type: entity_reference_label
+    type: entity_reference_count_formatter
     label: above
     settings:
-      link: true
+      filter_by_bundle: true
     third_party_settings: {  }
     weight: 2
     region: content
