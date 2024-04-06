@@ -1,3 +1,4 @@
+langcode: vi
 api_key: 85742a70-8ba6-48cb-84fc-5171db8c3b49
 default_engine: indexnow
 exclude_node_types:

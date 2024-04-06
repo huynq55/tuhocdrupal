@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_bp_reference
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.medium
@@ -12,6 +13,7 @@ dependencies:
   module:
     - entity_reference_count_formatter
     - image
+    - paragraphs
     - text
     - user
 id: node.article.teaser
@@ -26,6 +28,13 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_bp_reference:
+    type: paragraph_summary
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_image:
     type: image
@@ -44,7 +53,7 @@ content:
     settings:
       filter_by_bundle: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   comment: true
