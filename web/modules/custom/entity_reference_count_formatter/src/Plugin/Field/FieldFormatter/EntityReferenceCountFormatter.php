@@ -87,7 +87,7 @@ class EntityReferenceCountFormatter extends FormatterBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Filter by bundle'),
       '#default_value' => $this->getSetting('filter_by_bundle'),
-      '#description' => $$this->t('If checked, the reference count will be filtered by the entity bundle.'),
+      '#description' => $this->t('If checked, the reference count will be filtered by the entity bundle.'),
     ];
 
     return $elements;
