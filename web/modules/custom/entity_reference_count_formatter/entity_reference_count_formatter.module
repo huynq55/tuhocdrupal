@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Implements some hooks for the entity_reference_count_formatter module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function entity_reference_count_formatter_theme($existing, $type, $theme, $path) {

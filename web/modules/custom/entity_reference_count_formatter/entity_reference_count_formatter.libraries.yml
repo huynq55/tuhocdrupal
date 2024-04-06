@@ -1,0 +1,5 @@
+entity_reference_count_formatter:
+  version: 1.0
+  css:
+    theme:
+      css/entity_reference_count_formatter.css: {}
