@@ -14,6 +14,7 @@ dependencies:
   - entity_reference_count_formatter
   - simple_sitemap
   - index_now
+  - bootstrap_paragraphs
 default_content:
   file:
     - b5aaea2e-9da6-4760-997b-49e9e453677e
