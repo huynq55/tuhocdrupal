@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f7f2835a-deb5-4613-a5bf-ef447086cd8c
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-06 22.49.52 - A vibrant cityscape at dusk, showcasing a bustling city center with modern skyscrapers illuminated against the twilight sky. Neon lights and streetlig.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-06 22.49.52 - A vibrant cityscape at dusk, showcasing a bustling city center with modern skyscrapers illuminated against the twilight sky. Neon lights and streetlig.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 508702
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712418897

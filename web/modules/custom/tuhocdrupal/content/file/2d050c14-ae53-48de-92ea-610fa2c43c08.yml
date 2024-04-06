@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 2d050c14-ae53-48de-92ea-610fa2c43c08
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-06 22.49.34 - A serene landscape scene with a vast, tranquil lake reflecting the soft colors of the sunset sky. Majestic mountains loom in the background, partially.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-06 22.49.34 - A serene landscape scene with a vast, tranquil lake reflecting the soft colors of the sunset sky. Majestic mountains loom in the background, partially.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 304950
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712418829

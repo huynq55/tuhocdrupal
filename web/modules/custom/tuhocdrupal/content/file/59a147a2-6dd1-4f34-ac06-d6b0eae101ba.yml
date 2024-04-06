@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 59a147a2-6dd1-4f34-ac06-d6b0eae101ba
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-06 23.29.57 - A visually appealing and informative infographic showcasing the features and benefits of the Bootstrap Paragraphs module in Drupal. The infographic in.webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-06 23.29.57 - A visually appealing and informative infographic showcasing the features and benefits of the Bootstrap Paragraphs module in Drupal. The infographic in.webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 346426
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712421014

@@ -1,0 +1,529 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 212f57c3-d2e0-4508-a6b2-f65a3881036f
+  bundle: article
+  default_langcode: vi
+  depends:
+    100c593a-d47d-44c6-88c0-b5c6f1282bcb: file
+    2d050c14-ae53-48de-92ea-610fa2c43c08: file
+    f7f2835a-deb5-4613-a5bf-ef447086cd8c: file
+    59a147a2-6dd1-4f34-ac06-d6b0eae101ba: file
+    f50c8796-5052-4655-ae3f-fccb10140c45: taxonomy_term
+    534fb6f6-acf4-4833-848b-150b482344b7: taxonomy_term
+    95f43002-91ee-45cf-aff3-79263686171b: taxonomy_term
+    b3a20d00-d5c2-48e3-ac11-187980fad2b0: taxonomy_term
+    653ed312-c664-4df3-bd12-317351819802: taxonomy_term
+    a99ab8b0-bd26-4c7b-b659-f6e184ed0bb3: taxonomy_term
+    c8eb9cf7-ec79-4bfd-950e-0f091a6b7b45: taxonomy_term
+    ef10aec4-e06b-44ef-a0d2-9796b1d9cd70: taxonomy_term
+    66376251-c118-4112-a2fc-2f1e084073d3: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Khám Phá Sức Mạnh Của Bootstrap Paragraphs Trong Drupal'
+  created:
+    -
+      value: 1712416843
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Khám Phá Sức Mạnh Của Bootstrap Paragraphs Trong Drupal | Tự học Drupal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://tuhocdrupal.localhost/kham-pha-suc-manh-cua-bootstrap-paragraphs-trong-drupal.html'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
+  path:
+    -
+      alias: /kham-pha-suc-manh-cua-bootstrap-paragraphs-trong-drupal.html
+      langcode: vi
+      pathauto: 1
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1712417241
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b3a83ec5-2361-408a-ad21-9e8115d5dea2
+          bundle: bp_accordion
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712416851
+          behavior_settings:
+            -
+              value: {  }
+          bp_accordion_expand:
+            -
+              value: false
+          bp_accordion_section:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 4326a447-4c27-4538-9f49-256c9d7b8454
+                  bundle: bp_accordion_section
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712416851
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_accordion_section_body:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: 439a42d5-3c2b-4f75-9bec-981d870a3f3a
+                          bundle: bp_simple
+                          default_langcode: vi
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1712416953
+                          behavior_settings:
+                            -
+                              value: {  }
+                          bp_header:
+                            -
+                              value: 'Tiêu đề đoạn văn bản'
+                          bp_text:
+                            -
+                              value: 'Một đoạn văn bản hết sức đơn giản.'
+                              format: restricted_html
+                  bp_accordion_section_title:
+                    -
+                      value: 'Tiêu đề Accordion Section 1'
+                  bp_show_button:
+                    -
+                      value: false
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: a198e4b0-4f2c-4535-8f08-1e5a02fb12ac
+                  bundle: bp_accordion_section
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712417088
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_accordion_section_body:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: ddd26e62-f355-4aed-9c7c-3186d9775989
+                          bundle: bp_image
+                          default_langcode: vi
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1712417104
+                          behavior_settings:
+                            -
+                              value: {  }
+                          bp_header:
+                            -
+                              value: 'Đây là một bức ảnh'
+                          bp_image_field:
+                            -
+                              entity: 100c593a-d47d-44c6-88c0-b5c6f1282bcb
+                              alt: 'Google building'
+                              title: ''
+                              width: 730
+                              height: 486
+                          bp_link:
+                            -
+                              uri: 'https://google.com.vn'
+                              title: ''
+                              options: {  }
+                  bp_accordion_section_title:
+                    -
+                      value: 'Tiêu đề Accordion Section 2'
+                  bp_show_button:
+                    -
+                      value: false
+          bp_always_show:
+            -
+              value: false
+          bp_background:
+            -
+              value: paragraph--color--transparent
+          bp_header:
+            -
+              value: 'Demo Accordion'
+          bp_show_indicators:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 716acc7a-e8c0-4124-bdd9-c33afbb9157a
+          bundle: bp_carousel
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712418149
+          behavior_settings:
+            -
+              value: {  }
+          bp_slide_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 0c52fe87-4f9c-4e4a-80c7-d6d19dc963bc
+                  bundle: bp_image
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712418809
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Cảnh quan yên bình với hồ nước lớn phản chiếu bầu trời hoàng hôn'
+                  bp_image_field:
+                    -
+                      entity: 2d050c14-ae53-48de-92ea-610fa2c43c08
+                      alt: 'cảnh quan yên bình với hồ nước lớn phản chiếu bầu trời hoàng hôn'
+                      title: ''
+                      width: 1792
+                      height: 1024
+                  bp_link:
+                    -
+                      uri: 'https://chat.openai.com'
+                      title: ''
+                      options: {  }
+                  bp_width:
+                    -
+                      value: paragraph--width--medium
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 6fa351f7-8bea-4827-be2a-6e1f1dd023cd
+                  bundle: bp_image
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712418865
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời được chiếu sáng bởi ánh đèn neon'
+                  bp_image_field:
+                    -
+                      entity: f7f2835a-deb5-4613-a5bf-ef447086cd8c
+                      alt: 'cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời được chiếu sáng bởi ánh đèn neon'
+                      title: ''
+                      width: 1792
+                      height: 1024
+                  bp_link:
+                    -
+                      uri: 'https://chat.openai.com'
+                      title: ''
+                      options: {  }
+                  bp_width:
+                    -
+                      value: paragraph--width--medium
+          bp_slide_interval:
+            -
+              value: '1000'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3f170ad1-5a88-405c-8aa4-b649e35a3bde
+          bundle: bp_modal
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712419554
+          behavior_settings:
+            -
+              value: {  }
+          bp_header:
+            -
+              value: 'Đây là một Modal'
+          bp_modal_body:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: cd83c0d5-3c6e-48d2-9426-94fe6c277a09
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712419650
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Truyện Kiều'
+                  bp_text:
+                    -
+                      value: "Ngày xuân con én đưa thoi\r\nThiều quang chín chục đã ngoài sáu mươi\r\nCỏ non xanh rợn chân trời\r\nCành lê trắng điểm một vài bông hoa\r\nThanh minh trong tiết tháng ba\r\nLễ là tảo mộ hội là đạp xuân\r\nDập dìu tài tử giai nhân\r\nNgựa xe như nước áo quần như nêm"
+                      format: restricted_html
+          bp_modal_button_text:
+            -
+              value: 'Bật Modal'
+          bp_modal_footer:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 5708f708-b973-4618-9125-e30b7a104dd1
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712419782
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Tiêu đề phần chân Modal'
+                  bp_text:
+                    -
+                      value: '<p>Đây là một paragraph Simple được nhét vào phần chân Modal.</p>'
+                      format: basic_html
+          bp_modal_title:
+            -
+              value: 'Tiêu đề Modal'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5338e95b-48e2-4985-bb39-8420e3395138
+          bundle: bp_tabs
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712419981
+          behavior_settings:
+            -
+              value: {  }
+          bp_tab_section:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: c8244364-fe74-4fda-9fd3-a625199827a8
+                  bundle: bp_tab_section
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712419981
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_tab_section_body:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: 142ed72a-37d5-47b2-b15e-fa07d9977eec
+                          bundle: bp_simple
+                          default_langcode: vi
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1712419997
+                          behavior_settings:
+                            -
+                              value: {  }
+                          bp_header:
+                            -
+                              value: 'Tiêu đề nội dung Tab 1'
+                          bp_text:
+                            -
+                              value: '<p>Như vậy là trong nội dung này tôi đã show ra những kiểu Paragraph có sẵn được tạo ra bởi module bootstrap_paragraphs trong Drupal.</p>'
+                              format: basic_html
+                  bp_tab_section_title:
+                    -
+                      value: 'Tab 1'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 45ca1abf-5e59-4c7f-90f7-7955e4d568c0
+                  bundle: bp_tab_section
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712420142
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_tab_section_body:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: a6e2a2a4-bdb8-453a-bf6d-e8b190cd8df6
+                          bundle: bp_simple
+                          default_langcode: vi
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1712420154
+                          behavior_settings:
+                            -
+                              value: {  }
+                          bp_header:
+                            -
+                              value: 'Tiêu đề nội dung Tab 2'
+                          bp_text:
+                            -
+                              value: '<p>Đây là một module khá hay cung cấp các kiểu Paragraph đẹp mắt và tiện sử dụng cho người dùng.</p>'
+                              format: basic_html
+                  bp_tab_section_title:
+                    -
+                      value: 'Tab 2'
+  field_image:
+    -
+      entity: 59a147a2-6dd1-4f34-ac06-d6b0eae101ba
+      alt: 'Khám Phá Sức Mạnh Của Bootstrap Paragraphs Trong Drupal'
+      title: ''
+      width: 1024
+      height: 1024
+  field_tags:
+    -
+      entity: f50c8796-5052-4655-ae3f-fccb10140c45
+    -
+      entity: 534fb6f6-acf4-4833-848b-150b482344b7
+    -
+      entity: 95f43002-91ee-45cf-aff3-79263686171b
+    -
+      entity: b3a20d00-d5c2-48e3-ac11-187980fad2b0
+    -
+      entity: 653ed312-c664-4df3-bd12-317351819802
+    -
+      entity: a99ab8b0-bd26-4c7b-b659-f6e184ed0bb3
+    -
+      entity: c8eb9cf7-ec79-4bfd-950e-0f091a6b7b45
+    -
+      entity: ef10aec4-e06b-44ef-a0d2-9796b1d9cd70
+    -
+      entity: 66376251-c118-4112-a2fc-2f1e084073d3

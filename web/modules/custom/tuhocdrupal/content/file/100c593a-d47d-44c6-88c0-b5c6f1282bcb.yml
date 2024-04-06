@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 100c593a-d47d-44c6-88c0-b5c6f1282bcb
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Google.jpg
+  uri:
+    -
+      value: 'public://2024-04/Google.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 113095
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712417212

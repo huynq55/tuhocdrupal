@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: 534fb6f6-acf4-4833-848b-150b482344b7
+  uuid: 653ed312-c664-4df3-bd12-317351819802
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: Bootstrap5
+      value: BootstrapTabs
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'Bootstrap5 | Tự học Drupal'
+        content: 'BootstrapTabs | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/bootstrap5.tag'
+        href: 'http://tuhocdrupal.localhost/bootstraptabs.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /bootstrap5.tag
+      alias: /bootstraptabs.tag
       langcode: vi
       pathauto: 1

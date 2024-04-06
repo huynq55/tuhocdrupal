@@ -22,12 +22,17 @@ default_content:
     - 0e08bd23-c433-488a-af93-182ca5b2af95
     - 65eb0462-4f4f-4d4b-95c3-d1c02f13768a
     - e72449c4-4721-410e-9f1d-57939cb97f4e
+    - 100c593a-d47d-44c6-88c0-b5c6f1282bcb
+    - 2d050c14-ae53-48de-92ea-610fa2c43c08
+    - 59a147a2-6dd1-4f34-ac06-d6b0eae101ba
+    - f7f2835a-deb5-4613-a5bf-ef447086cd8c
   node:
     - 07a0811f-39c0-4b1d-b2e1-c1a0aee50996
     - dd00797b-82d4-462b-b687-79d1910a4ba9
     - 7d535335-a399-45d1-b4df-e0c7aab22f65
     - 97d2eb42-1b4a-448a-9915-e9efe9251da5
     - 33bae3c2-2227-4f7a-9de8-a29045ff9566
+    - 212f57c3-d2e0-4508-a6b2-f65a3881036f
   taxonomy_term:
     - 5aa272df-52a5-41e4-b881-23f83eac1f1a
     - 7b0fcbba-0e29-44f8-b223-b0ffa08f8928
@@ -59,3 +64,10 @@ default_content:
     - 8c7715fb-f6b4-4202-a919-681852a40d5c
     - 9d08381a-bd7c-4f9a-8651-34f2b49cae3b
     - 2401e7f9-f765-474b-8864-2bd29b1301ca
+    - 653ed312-c664-4df3-bd12-317351819802
+    - 66376251-c118-4112-a2fc-2f1e084073d3
+    - 95f43002-91ee-45cf-aff3-79263686171b
+    - a99ab8b0-bd26-4c7b-b659-f6e184ed0bb3
+    - b3a20d00-d5c2-48e3-ac11-187980fad2b0
+    - c8eb9cf7-ec79-4bfd-950e-0f091a6b7b45
+    - f50c8796-5052-4655-ae3f-fccb10140c45
