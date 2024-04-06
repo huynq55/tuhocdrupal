@@ -1,0 +1,13 @@
+langcode: vi
+status: true
+dependencies:
+  module:
+    - comment
+id: comment_entity_slash_comment_title
+label: 'Comment Entity slash Comment Title'
+type: 'canonical_entities:comment'
+pattern: '[comment:entity].html/[comment:title].comment'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
