@@ -1,0 +1,15 @@
+api_key: 85742a70-8ba6-48cb-84fc-5171db8c3b49
+default_engine: bing
+exclude_node_types:
+  article: 0
+  page: 0
+exclude_node_events:
+  insert: 0
+  update: 0
+  delete: 0
+exclude_vocabularies:
+  tags: 0
+exclude_taxonomy_events:
+  insert: 0
+  update: 0
+  delete: 0
