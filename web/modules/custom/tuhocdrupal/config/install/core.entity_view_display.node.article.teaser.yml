@@ -13,7 +13,6 @@ dependencies:
   module:
     - entity_reference_count_formatter
     - image
-    - paragraphs
     - text
     - user
 id: node.article.teaser
@@ -28,13 +27,6 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_bp_reference:
-    type: paragraph_summary
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_image:
     type: image
@@ -53,9 +45,10 @@ content:
     settings:
       filter_by_bundle: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   comment: true
+  field_bp_reference: true
   langcode: true
   links: true

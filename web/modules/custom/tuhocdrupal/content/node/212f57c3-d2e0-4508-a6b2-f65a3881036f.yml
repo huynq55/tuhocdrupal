@@ -50,6 +50,11 @@ default:
         name: title
         content: 'Khám Phá Sức Mạnh Của Bootstrap Paragraphs Trong Drupal | Tự học Drupal'
     -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Chào mừng bạn đến với bài viết giới thiệu về module Bootstrap Paragraphs cho Drupal! Trong bài viết này, chúng tôi sẽ không đi sâu vào lý thuyết hay phức tạp kỹ thuật. Thay vào đó, chúng tôi muốn trực tiếp đưa bạn vào thế giới của Bootstrap Paragraphs bằng cách thực tế nhất: showcase. Từ hình ảnh đến video, từ slider đến block văn bản, bạn sẽ có cơ hội khám phá các loại đoạn văn có sẵn mà module này mang lại, giúp việc tạo lập nội dung trở nên linh hoạt và đẹp mắt hơn bao giờ hết. Hãy cùng chúng tôi bắt đầu!'
+    -
       tag: link
       attributes:
         rel: canonical
@@ -64,6 +69,11 @@ default:
       alias: /kham-pha-suc-manh-cua-bootstrap-paragraphs-trong-drupal.html
       langcode: vi
       pathauto: 1
+  body:
+    -
+      value: '<p>Chào mừng bạn đến với bài viết giới thiệu về module Bootstrap Paragraphs cho Drupal! Trong bài viết này, chúng tôi sẽ không đi sâu vào lý thuyết hay phức tạp kỹ thuật. Thay vào đó, chúng tôi muốn trực tiếp đưa bạn vào thế giới của Bootstrap Paragraphs bằng cách thực tế nhất: showcase. Từ hình ảnh đến video, từ slider đến block văn bản, bạn sẽ có cơ hội khám phá các loại đoạn văn có sẵn mà module này mang lại, giúp việc tạo lập nội dung trở nên linh hoạt và đẹp mắt hơn bao giờ hết. Hãy cùng chúng tôi bắt đầu!</p>'
+      format: full_html
+      summary: ''
   comment:
     -
       status: 2
