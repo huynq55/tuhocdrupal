@@ -2,6 +2,7 @@ langcode: vi
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
@@ -9,6 +10,7 @@ dependencies:
     - image.style.wide
     - node.type.article
   module:
+    - comment
     - entity_reference_count_formatter
     - image
     - text
@@ -24,6 +26,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_image:
     type: image
@@ -45,6 +56,5 @@ content:
     weight: 2
     region: content
 hidden:
-  comment: true
   langcode: true
   links: true
