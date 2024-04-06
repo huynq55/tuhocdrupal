@@ -1,0 +1,16 @@
+langcode: vi
+status: true
+dependencies: {  }
+id: index_now
+label: 'Index Now'
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/splits/production
+module:
+  index_now: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
