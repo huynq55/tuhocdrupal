@@ -13,7 +13,6 @@ dependencies:
   - metatag_verification
   - entity_reference_count_formatter
   - simple_sitemap
-  - index_now
   - bootstrap_paragraphs
 default_content:
   file:
