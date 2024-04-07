@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f88f4610-4cc1-4808-882f-220e42e3295c
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'tuhocdrupal feature.png'
+  uri:
+    -
+      value: 'public://2024-04/tuhocdrupal feature.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 150347
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712482487

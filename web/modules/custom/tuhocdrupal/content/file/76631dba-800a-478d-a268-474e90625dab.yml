@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 76631dba-800a-478d-a268-474e90625dab
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'bootstrap 5 admin theme.png'
+  uri:
+    -
+      value: 'public://2024-04/bootstrap 5 admin theme.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 164323
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712482054

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6d0585e7-0820-46b3-b071-c2fcc11bff1e
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'feature track changes.png'
+  uri:
+    -
+      value: 'public://2024-04/feature track changes.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 80926
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712482661

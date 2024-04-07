@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 4f24cbf1-d0f3-43b2-8e07-8dbce711e4d0
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'add content to your module.png'
+  uri:
+    -
+      value: 'public://2024-04/add content to your module.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 137591
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712482999

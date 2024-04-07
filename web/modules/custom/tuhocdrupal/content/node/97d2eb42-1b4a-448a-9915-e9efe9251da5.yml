@@ -5,6 +5,7 @@ _meta:
   bundle: article
   default_langcode: vi
   depends:
+    4f24cbf1-d0f3-43b2-8e07-8dbce711e4d0: file
     65eb0462-4f4f-4d4b-95c3-d1c02f13768a: file
     940ec983-6883-4732-8150-1ab3f6a4e9ff: taxonomy_term
     8896bcb7-fe39-44cb-9174-610d9670c088: taxonomy_term
@@ -39,6 +40,27 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Khám Phá Sức Mạnh Của Module 'Default Content': Đưa Quản Lý Nội Dung Drupal Lên Một Tầm Cao Mới | Tự học Drupal"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Hãy biến việc quản lý nội dung trên Drupal trở nên thú vị hơn bao giờ hết! Đã bao giờ bạn tự hỏi làm thế nào để nội dung của mình không chỉ tồn tại trên website mà còn có thể dễ dàng chia sẻ, sao lưu, hoặc thậm chí chuyển giao không? Đừng lo, giải pháp nằm ngay trong module tuyệt vời có tên là "default_content". Trong bài viết này, tôi sẽ hướng dẫn bạn cách thức để bạn có thể tự tin export và import nội dung một cách dễ dàng, từ đó mở ra vô vàn khả năng cho website Drupal của mình.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://tuhocdrupal.localhost/kham-pha-suc-manh-cua-module-default-content-dua-quan-ly-noi-dung-drupal-len-mot-tam-cao-moi.html'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
       alias: /kham-pha-suc-manh-cua-module-default-content-dua-quan-ly-noi-dung-drupal-len-mot-tam-cao-moi.html
@@ -46,17 +68,87 @@ default:
       pathauto: 1
   body:
     -
-      value: "<div class=\"flex flex-grow flex-col max-w-full\"><div class=\"min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto\" data-message-author-role=\"assistant\" data-message-id=\"faf832df-be77-4d1a-b80e-70805d4a7e43\"><div class=\"markdown prose w-full break-words dark:prose-invert light\"><p>Hãy biến việc quản lý nội dung trên Drupal trở nên thú vị hơn bao giờ hết! Đã bao giờ bạn tự hỏi làm thế nào để nội dung của mình không chỉ tồn tại trên website mà còn có thể dễ dàng chia sẻ, sao lưu, hoặc thậm chí chuyển giao không? Đừng lo, giải pháp nằm ngay trong module tuyệt vời có tên là \"default_content\". Trong bài viết này, tôi sẽ hướng dẫn bạn cách thức để bạn có thể tự tin export và import nội dung một cách dễ dàng, từ đó mở ra vô vàn khả năng cho website Drupal của mình.</p><p>Trước hết, bạn cần đảm bảo rằng đã cài đặt module \"default_content\" cùng với các bản patch liên quan. Nếu bạn chưa làm điều này, không vấn đề gì, hãy tham khảo <a href=\"/ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html\">bài viết trước</a> để bắt đầu. Nếu bạn cần những bản patch cho module default_content, hãy thoải mái tải chúng tại <a href=\"https://github.com/huynq55/tuhocdrupal\">mã nguồn của webiste này</a>. Sau đó, bạn sẽ được chào đón bởi tính năng xuất khẩu dữ liệu thông qua đường dẫn:</p><pre><code class=\"language-plaintext\">/admin/default-content/export</code></pre><p>Module này hỗ trợ ba loại nội dung phổ biến nhất trên Drupal: node, taxonomy_term, và block_content. Muốn xuất dữ liệu khác, chỉ cần biết tên máy (machine name) của thực thể bạn muốn xuất và sử dụng lệnh Drush sau: <code>vendor/bin/drush default-content:export &lt;name_of_entity&gt; &lt;id_of_content&gt;</code>. Ví dụ, để xuất một bài viết với entity name là 'node' và id là 1, bạn chỉ việc chạy lệnh: <code>vendor/bin/drush default-content:export node 1</code>.</p><p>Kế tiếp, hãy thêm nội dung vừa xuất vào module của bạn:</p><img src=\"/sites/default/files/inline-images/image_1.png\" data-entity-uuid=\"6cc6f76a-5215-4592-accc-d1834bc967c0\" data-entity-type=\"file\" alt=\"contents exported by default_content module Drupal\" width=\"551\" height=\"740\"><p>Tiếp tục, trong file <code>.info.yml</code> của module, bạn sẽ thêm UUID của nội dung đã xuất:</p><pre><code class=\"language-plaintext\">default_content:\r\n file:\r\n   - b5aaea2e-9da6-4760-997b-49e9e453677e\r\n   - 616a05a8-945b-4b51-b60d-f950f4c416ba\r\n   - 0e08bd23-c433-488a-af93-182ca5b2af95\r\n node:\r\n   - 07a0811f-39c0-4b1d-b2e1-c1a0aee50996\r\n   - dd00797b-82d4-462b-b687-79d1910a4ba9\r\n   - 7d535335-a399-45d1-b4df-e0c7aab22f65\r\n taxonomy_term:\r\n   - 5aa272df-52a5-41e4-b881-23f83eac1f1a\r\n   - 7b0fcbba-0e29-44f8-b223-b0ffa08f8928\r\n   - 039db5d3-fd09-46f2-a3cb-37bdc7424431\r\n   - 88d29289-0baa-4a07-a367-bc65d22ce9b0\r\n   - 534fb6f6-acf4-4833-848b-150b482344b7\r\n   - 6968ecad-79e3-4ac3-a95d-917c9558c4da\r\n   - ac4f1002-c61a-4ebc-9526-545c2962321c\r\n   - afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1\r\n   - cb3ec2b8-82d0-480e-ae1a-87c345a152ab\r\n   - cfd9acff-46bc-4558-b86b-df825f9555ad\r\n   - 9472d8bd-56a6-46b9-b681-68a7609f3424\r\n   - 35557e70-93fc-4148-b255-d9827ca25fbf\r\n   - a8b78dff-5697-4bf9-a55e-65ccf9fe4e2b\r\n   - c39e6969-f28c-46e2-8e74-60eee5c3ba78\r\n   - fae3595f-4bdf-42c9-b260-f063edf0cd6e\r\n   - 58bca290-99ca-4816-9f71-e0a43a26d319\r\n   - 93ad0d4a-ec5d-4815-9416-f2e623712ee7\r\n   - 592f7e54-da6e-4c87-af9c-04f57f00d9a0\r\n   - a3d29f39-3b4e-4245-bf50-0170e0573149\r\n   - e9379f8a-7c38-4775-aed9-330b66e50dbe\r\n   - fc5ff6a8-8aea-4fe6-bd74-0b8cc52944ab</code></pre><p>Đây là cách bạn nói với Drupal: \"Hãy chú ý đến những mảnh ghép này khi tôi cài đặt module!\"</p><p>Và đó là tất cả! Bạn đã xuất thành công dữ liệu của mình. Khi module của bạn được cài đặt, nếu module \"default_content\" đã được kích hoạt, mọi nội dung bạn đã xuất sẽ tự động được nhập vào website.</p><p>Nếu sau này bạn cập nhật thêm nội dung vào module và muốn cập nhật dữ liệu mới cho website, chỉ cần chạy lệnh: <code>vendor/bin/drush default-content:import my_module --update</code> với \"my_module\" là tên của module bạn muốn cập nhật.</p><p>Vậy là bạn đã có trong tay toàn bộ kiến thức để quản lý dữ liệu trên website Drupal một cách linh hoạt. Hy vọng với hướng dẫn chi tiết này, bạn không chỉ nắm bắt được cách thức làm việc với module \"default_content\" mà còn cảm thấy phấn khích với khả năng tùy chỉnh và chia sẻ nội dung trên nền tảng Drupal. Hãy bắt đầu và khám phá không giới hạn!</p></div></div></div>"
+      value: '<p>Hãy biến việc quản lý nội dung trên Drupal trở nên thú vị hơn bao giờ hết! Đã bao giờ bạn tự hỏi làm thế nào để nội dung của mình không chỉ tồn tại trên website mà còn có thể dễ dàng chia sẻ, sao lưu, hoặc thậm chí chuyển giao không? Đừng lo, giải pháp nằm ngay trong module tuyệt vời có tên là "default_content". Trong bài viết này, tôi sẽ hướng dẫn bạn cách thức để bạn có thể tự tin export và import nội dung một cách dễ dàng, từ đó mở ra vô vàn khả năng cho website Drupal của mình.</p>'
       format: full_html
       summary: ''
   comment:
     -
       status: 2
       cid: 0
-      last_comment_timestamp: 1712308592
+      last_comment_timestamp: 1712313939
       last_comment_name: ''
       last_comment_uid: 1
       comment_count: 0
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 60166cbc-cca2-49f8-9bcf-a398f1a73a9b
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712482920
+          behavior_settings:
+            -
+              value: {  }
+          bp_text:
+            -
+              value: '<p>Hãy biến việc quản lý nội dung trên Drupal trở nên thú vị hơn bao giờ hết! Đã bao giờ bạn tự hỏi làm thế nào để nội dung của mình không chỉ tồn tại trên website mà còn có thể dễ dàng chia sẻ, sao lưu, hoặc thậm chí chuyển giao không? Đừng lo, giải pháp nằm ngay trong module tuyệt vời có tên là "default_content". Trong bài viết này, tôi sẽ hướng dẫn bạn cách thức để bạn có thể tự tin export và import nội dung một cách dễ dàng, từ đó mở ra vô vàn khả năng cho website Drupal của mình.</p><p>Trước hết, bạn cần đảm bảo rằng đã cài đặt module "default_content" cùng với các bản patch liên quan. Nếu bạn chưa làm điều này, không vấn đề gì, hãy tham khảo <a href="/ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html">bài viết trước</a> để bắt đầu. Nếu bạn cần những bản patch cho module default_content, hãy thoải mái tải chúng tại <a href="https://github.com/huynq55/tuhocdrupal">mã nguồn của webiste này</a>. Sau đó, bạn sẽ được chào đón bởi tính năng xuất khẩu dữ liệu thông qua đường dẫn:</p><pre><code class="language-plaintext">/admin/default-content/export</code></pre><p>Module này hỗ trợ ba loại nội dung phổ biến nhất trên Drupal: node, taxonomy_term, và block_content. Muốn xuất dữ liệu khác, chỉ cần biết tên máy (machine name) của thực thể bạn muốn xuất và sử dụng lệnh Drush sau: <code>vendor/bin/drush default-content:export &lt;name_of_entity&gt; &lt;id_of_content&gt;</code>. Ví dụ, để xuất một bài viết với entity name là ''node'' và id là 1, bạn chỉ việc chạy lệnh: <code>vendor/bin/drush default-content:export node 1</code>.</p><p>Kế tiếp, hãy thêm nội dung vừa xuất vào module của bạn:</p>'
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ed73b023-6af9-4578-a4bf-542dea0843c7
+          bundle: bp_image
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712482939
+          behavior_settings:
+            -
+              value: {  }
+          bp_image_field:
+            -
+              entity: 4f24cbf1-d0f3-43b2-8e07-8dbce711e4d0
+              alt: 'add content to your module'
+              title: ''
+              width: 551
+              height: 740
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fb2bbac0-c548-403e-a6dc-9b19b7b620f4
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712483018
+          behavior_settings:
+            -
+              value: {  }
+          bp_text:
+            -
+              value: "<p>Tiếp tục, trong file <code>.info.yml</code> của module, bạn sẽ thêm UUID của nội dung đã xuất:</p><pre><code class=\"language-plaintext\">default_content:\r\n file:\r\n   - b5aaea2e-9da6-4760-997b-49e9e453677e\r\n   - 616a05a8-945b-4b51-b60d-f950f4c416ba\r\n   - 0e08bd23-c433-488a-af93-182ca5b2af95\r\n node:\r\n   - 07a0811f-39c0-4b1d-b2e1-c1a0aee50996\r\n   - dd00797b-82d4-462b-b687-79d1910a4ba9\r\n   - 7d535335-a399-45d1-b4df-e0c7aab22f65\r\n taxonomy_term:\r\n   - 5aa272df-52a5-41e4-b881-23f83eac1f1a\r\n   - 7b0fcbba-0e29-44f8-b223-b0ffa08f8928\r\n   - 039db5d3-fd09-46f2-a3cb-37bdc7424431\r\n   - 88d29289-0baa-4a07-a367-bc65d22ce9b0\r\n   - 534fb6f6-acf4-4833-848b-150b482344b7\r\n   - 6968ecad-79e3-4ac3-a95d-917c9558c4da\r\n   - ac4f1002-c61a-4ebc-9526-545c2962321c\r\n   - afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1\r\n   - cb3ec2b8-82d0-480e-ae1a-87c345a152ab\r\n   - cfd9acff-46bc-4558-b86b-df825f9555ad\r\n   - 9472d8bd-56a6-46b9-b681-68a7609f3424\r\n   - 35557e70-93fc-4148-b255-d9827ca25fbf\r\n   - a8b78dff-5697-4bf9-a55e-65ccf9fe4e2b\r\n   - c39e6969-f28c-46e2-8e74-60eee5c3ba78\r\n   - fae3595f-4bdf-42c9-b260-f063edf0cd6e\r\n   - 58bca290-99ca-4816-9f71-e0a43a26d319\r\n   - 93ad0d4a-ec5d-4815-9416-f2e623712ee7\r\n   - 592f7e54-da6e-4c87-af9c-04f57f00d9a0\r\n   - a3d29f39-3b4e-4245-bf50-0170e0573149\r\n   - e9379f8a-7c38-4775-aed9-330b66e50dbe\r\n   - fc5ff6a8-8aea-4fe6-bd74-0b8cc52944ab</code></pre><p>Đây là cách bạn nói với Drupal: \"Hãy chú ý đến những mảnh ghép này khi tôi cài đặt module!\"</p><p>Và đó là tất cả! Bạn đã xuất thành công dữ liệu của mình. Khi module của bạn được cài đặt, nếu module \"default_content\" đã được kích hoạt, mọi nội dung bạn đã xuất sẽ tự động được nhập vào website.</p><p>Nếu sau này bạn cập nhật thêm nội dung vào module và muốn cập nhật dữ liệu mới cho website, chỉ cần chạy lệnh: <code>vendor/bin/drush default-content:import my_module --update</code> với \"my_module\" là tên của module bạn muốn cập nhật.</p><p>Vậy là bạn đã có trong tay toàn bộ kiến thức để quản lý dữ liệu trên website Drupal một cách linh hoạt. Hy vọng với hướng dẫn chi tiết này, bạn không chỉ nắm bắt được cách thức làm việc với module \"default_content\" mà còn cảm thấy phấn khích với khả năng tùy chỉnh và chia sẻ nội dung trên nền tảng Drupal. Hãy bắt đầu và khám phá không giới hạn!</p>"
+              format: full_html
   field_image:
     -
       entity: 65eb0462-4f4f-4d4b-95c3-d1c02f13768a

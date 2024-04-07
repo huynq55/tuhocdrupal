@@ -5,6 +5,7 @@ _meta:
   bundle: article
   default_langcode: vi
   depends:
+    76631dba-800a-478d-a268-474e90625dab: file
     b5aaea2e-9da6-4760-997b-49e9e453677e: file
     afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1: taxonomy_term
     88d29289-0baa-4a07-a367-bc65d22ce9b0: taxonomy_term
@@ -41,23 +42,123 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Cài đặt Drupal cơ bản | Tự học Drupal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Xin chào các bạn,Mở đầu hành trình chia sẻ kiến thức và kinh nghiệm qua blog này, tôi muốn giới thiệu bài viết mở màn với chủ đề hết sức thực tế và quan trọng: Hướng dẫn cài đặt Drupal một cách cơ bản.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://tuhocdrupal.localhost/cai-dat-drupal-co-ban.html'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: ''
+      alias: /cai-dat-drupal-co-ban.html
       langcode: vi
+      pathauto: 1
   body:
     -
-      value: "<p>Xin chào các bạn,</p><p>Mở đầu hành trình chia sẻ kiến thức và kinh nghiệm qua blog này, tôi muốn giới thiệu bài viết mở màn với chủ đề hết sức thực tế và quan trọng: Hướng dẫn cài đặt Drupal một cách cơ bản.</p><p>Drupal, một hệ thống quản lý nội dung mạnh mẽ, được xây dựng trên nền tảng ngôn ngữ lập trình PHP, không thể thiếu sự hỗ trợ của <a href=\"https://getcomposer.org/\">Composer</a> - công cụ quản lý thư viện tiên tiến. Vì vậy, bước đầu tiên và cơ bản nhất, hãy chắc chắn rằng bạn đã cài đặt Composer trên hệ thống của mình.</p><p>Tiếp theo, việc tải Drupal từ địa chỉ <a href=\"https://www.drupal.org/latest-release\">trang chủ của Drupal</a> sẽ mở ra cánh cửa vào thế giới web đa năng.</p><p>Tuy nhiên, trước khi bắt tay vào cài đặt Drupal, hãy đảm bảo rằng máy tính của bạn đã được trang bị đầy đủ một web server và database server - những thành phần không thể thiếu để Drupal hoạt động. Dành cho người dùng Windows, WAMP là một giải pháp toàn diện với đầy đủ Apache, MySQL, và PHP. Người dùng Ubuntu không chỉ có thể lựa chọn các gói tương tự mà còn có thể khám phá <a href=\"https://ddev.com/\">DDEV</a> - một môi trường phát triển độc đáo dựa trên Docker, hứa hẹn sự tiện lợi và linh hoạt.</p><p>Ngoài ra, một bước không kém phần quan trọng trong quá trình phát triển website là việc quản lý mã nguồn một cách hiệu quả. <a href=\"https://git-scm.com/\">GIT</a>, công cụ quản lý phiên bản hàng đầu, sẽ là trợ thủ đắc lực cho bạn trong việc này. Để làm cho mã nguồn của bạn được tổ chức một cách gọn gàng và tối ưu, việc sử dụng file <em><strong>.gitignore</strong></em> để loại trừ các thư mục và file không cần thiết khỏi quản lý phiên bản là một phương pháp thông minh. Điều này giúp giảm bớt dung lượng lưu trữ và tăng cường bảo mật cho mã nguồn của bạn. Thông thường, chỉ file <em><strong>composer.json</strong></em> cùng với các module và theme do bạn tự phát triển cần được giữ lại trong quản lý phiên bản.</p><p>Dưới đây là một gợi ý về cách thiết lập file <em><strong>.gitignore</strong></em> để loại trừ các file và thư mục không cần thiết, đồng thời giữ lại những thành phần quan trọng:</p><pre><code class=\"language-plaintext\">composer.lock\r\nvendor/\r\nweb/sites/\r\nweb/modules/contrib/\r\nthemes/contrib/\r\nweb/core/\r\nweb/web.config\r\nweb/update.php\r\nweb/themes/README.txt\r\nweb/robots.txt\r\nweb/README.md\r\nweb/profiles/README.txt\r\nweb/modules/README.txt\r\nweb/INSTALL.txt\r\nweb/index.php\r\nweb/example.gitignore\r\nweb/autoload.php\r\nweb/.htaccess\r\nweb/.ht.router.php\r\nweb/.eslintrc.json\r\nweb/.eslintignore\r\nweb/.csslintrc\r\n.gitattributes\r\n.editorconfig</code></pre><p>Trong thế giới Drupal, theme đóng vai trò là linh hồn của website, quyết định nhiều tới bộ mặt và trải nghiệm người dùng. Claro, với vẻ ngoài tinh tế và khả năng tùy chỉnh cao, đã trở thành lựa chọn mặc định được nhiều người yêu thích. Tuy nhiên, để tận dụng tối đa khả năng tương thích và hiệu suất của Bootstrap 5, một framework thiết kế web phổ biến, tôi quyết định nâng tầm website với việc tích hợp theme Bootstrap 5 Admin.</p><p>Cài đặt theme này trên Drupal của bạn không chỉ là một bước tiến trong việc tạo ra một diện mạo hiện đại và chuyên nghiệp cho website, mà còn mở ra vô số khả năng tùy biến và tối ưu hóa trải nghiệm người dùng. Để thêm theme Bootstrap 5 Admin vào dự án Drupal của bạn, đơn giản chỉ cần thực hiện lệnh sau trong terminal:</p><pre><code class=\"language-plaintext\">composer require 'drupal/bootstrap5_admin:^1.1'</code></pre><img src=\"/sites/default/files/inline-images/bootstrap%205%20admin%20theme.png\" data-entity-uuid=\"ddfd798a-7597-4ee9-806d-8f8025117d8f\" data-entity-type=\"file\" alt=\"bootstrap 5 admin theme\" width=\"1786\" height=\"407\"><div class=\"flex flex-grow flex-col max-w-full\"><div class=\"min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto\" data-message-author-role=\"assistant\" data-message-id=\"4dbc11da-2514-4d47-99b3-2d9cab391eb8\"><div class=\"markdown prose w-full break-words dark:prose-invert light\"><p>Sau khi tải về và cài đặt theme Bootstrap 5 Admin, bước tiếp theo trong kế hoạch tạo dựng website của tôi là phát triển một sub-theme dựa trên nền tảng này. Động thái này không chỉ mở ra cánh cửa cho sự sáng tạo không giới hạn trên nền tảng của theme gốc mà còn giúp tôi dễ dàng áp dụng các tuỳ chỉnh cá nhân mà không lo ảnh hưởng đến các cập nhật trong tương lai.</p><p>Tiếp tục hành trình tạo lập, tôi thêm logo mới cho theme để thể hiện rõ nét thương hiệu và tinh thần của website. Đồng thời, tôi cũng tiến hành tinh chỉnh giao diện bằng cách ẩn đi những block không cần thiết trong khu vực block layout, đảm bảo một trang web sạch sẽ, gọn gàng và thân thiện với người dùng.</p><p>Kết quả là một website không chỉ với diện mạo bắt mắt nhờ vào theme Bootstrap 5 Admin mà còn phản ánh được phong cách và cá tính riêng biệt qua các tuỳ biến kỹ lưỡng. Mặc dù mới chỉ là bước khởi đầu giản đơn, website này tiềm ẩn một sức mạnh tuỳ biến đáng kinh ngạc, hứa hẹn mang lại nhiều khám phá thú vị và giá trị trong tương lai.</p><p>Hãy cùng đón chờ những chia sẻ tiếp theo từ blog của tôi, nơi tôi sẽ tiếp tục mở rộng về thế giới Drupal, một công cụ không thể thiếu cho bất kỳ nhà phát triển web nào muốn chinh phục những đỉnh cao mới trong lĩnh vực công nghệ thông tin.</p></div></div></div>"
+      value: '<p>Xin chào các bạn,</p><p>Mở đầu hành trình chia sẻ kiến thức và kinh nghiệm qua blog này, tôi muốn giới thiệu bài viết mở màn với chủ đề hết sức thực tế và quan trọng: Hướng dẫn cài đặt Drupal một cách cơ bản.</p>'
       format: full_html
       summary: ''
   comment:
     -
       status: 2
       cid: 0
-      last_comment_timestamp: 1712195337
+      last_comment_timestamp: 1712242449
       last_comment_name: ''
       last_comment_uid: 1
       comment_count: 0
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ec85160d-b52a-4e52-bf46-b5c35a2def56
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712481941
+          behavior_settings:
+            -
+              value: {  }
+          bp_text:
+            -
+              value: "<p>Xin chào các bạn,</p><p>Mở đầu hành trình chia sẻ kiến thức và kinh nghiệm qua blog này, tôi muốn giới thiệu bài viết mở màn với chủ đề hết sức thực tế và quan trọng: Hướng dẫn cài đặt Drupal một cách cơ bản.</p><p>Drupal, một hệ thống quản lý nội dung mạnh mẽ, được xây dựng trên nền tảng ngôn ngữ lập trình PHP, không thể thiếu sự hỗ trợ của <a href=\"https://getcomposer.org/\">Composer</a> - công cụ quản lý thư viện tiên tiến. Vì vậy, bước đầu tiên và cơ bản nhất, hãy chắc chắn rằng bạn đã cài đặt Composer trên hệ thống của mình.</p><p>Tiếp theo, việc tải Drupal từ địa chỉ <a href=\"https://www.drupal.org/latest-release\">trang chủ của Drupal</a> sẽ mở ra cánh cửa vào thế giới web đa năng.</p><p>Tuy nhiên, trước khi bắt tay vào cài đặt Drupal, hãy đảm bảo rằng máy tính của bạn đã được trang bị đầy đủ một web server và database server - những thành phần không thể thiếu để Drupal hoạt động. Dành cho người dùng Windows, WAMP là một giải pháp toàn diện với đầy đủ Apache, MySQL, và PHP. Người dùng Ubuntu không chỉ có thể lựa chọn các gói tương tự mà còn có thể khám phá <a href=\"https://ddev.com/\">DDEV</a> - một môi trường phát triển độc đáo dựa trên Docker, hứa hẹn sự tiện lợi và linh hoạt.</p><p>Ngoài ra, một bước không kém phần quan trọng trong quá trình phát triển website là việc quản lý mã nguồn một cách hiệu quả. <a href=\"https://git-scm.com/\">GIT</a>, công cụ quản lý phiên bản hàng đầu, sẽ là trợ thủ đắc lực cho bạn trong việc này. Để làm cho mã nguồn của bạn được tổ chức một cách gọn gàng và tối ưu, việc sử dụng file <em><strong>.gitignore</strong></em> để loại trừ các thư mục và file không cần thiết khỏi quản lý phiên bản là một phương pháp thông minh. Điều này giúp giảm bớt dung lượng lưu trữ và tăng cường bảo mật cho mã nguồn của bạn. Thông thường, chỉ file <em><strong>composer.json</strong></em> cùng với các module và theme do bạn tự phát triển cần được giữ lại trong quản lý phiên bản.</p><p>Dưới đây là một gợi ý về cách thiết lập file <em><strong>.gitignore</strong></em> để loại trừ các file và thư mục không cần thiết, đồng thời giữ lại những thành phần quan trọng:</p><pre><code class=\"language-plaintext\">composer.lock\r\nvendor/\r\nweb/sites/\r\nweb/modules/contrib/\r\nthemes/contrib/\r\nweb/core/\r\nweb/web.config\r\nweb/update.php\r\nweb/themes/README.txt\r\nweb/robots.txt\r\nweb/README.md\r\nweb/profiles/README.txt\r\nweb/modules/README.txt\r\nweb/INSTALL.txt\r\nweb/index.php\r\nweb/example.gitignore\r\nweb/autoload.php\r\nweb/.htaccess\r\nweb/.ht.router.php\r\nweb/.eslintrc.json\r\nweb/.eslintignore\r\nweb/.csslintrc\r\n.gitattributes\r\n.editorconfig</code></pre><p>Trong thế giới Drupal, theme đóng vai trò là linh hồn của website, quyết định nhiều tới bộ mặt và trải nghiệm người dùng. Claro, với vẻ ngoài tinh tế và khả năng tùy chỉnh cao, đã trở thành lựa chọn mặc định được nhiều người yêu thích. Tuy nhiên, để tận dụng tối đa khả năng tương thích và hiệu suất của Bootstrap 5, một framework thiết kế web phổ biến, tôi quyết định nâng tầm website với việc tích hợp theme Bootstrap 5 Admin.</p><p>Cài đặt theme này trên Drupal của bạn không chỉ là một bước tiến trong việc tạo ra một diện mạo hiện đại và chuyên nghiệp cho website, mà còn mở ra vô số khả năng tùy biến và tối ưu hóa trải nghiệm người dùng. Để thêm theme Bootstrap 5 Admin vào dự án Drupal của bạn, đơn giản chỉ cần thực hiện lệnh sau trong terminal:</p><pre><code class=\"language-plaintext\">composer require 'drupal/bootstrap5_admin:^1.1'</code></pre>"
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 628dfbc2-e8c2-4b67-9293-ea0c814b8fe0
+          bundle: bp_image
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712482006
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_image_field:
+            -
+              entity: 76631dba-800a-478d-a268-474e90625dab
+              alt: 'bootstrap 5 admin theme and sub theme'
+              title: ''
+              width: 1786
+              height: 407
+          bp_link:
+            -
+              uri: 'https://www.drupal.org/project/bootstrap5_admin'
+              title: ''
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: db2703b2-2795-416f-889b-0e77c0908039
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712482154
+          behavior_settings:
+            -
+              value: {  }
+          bp_text:
+            -
+              value: '<p>Sau khi tải về và cài đặt theme Bootstrap 5 Admin, bước tiếp theo trong kế hoạch tạo dựng website của tôi là phát triển một sub-theme dựa trên nền tảng này. Động thái này không chỉ mở ra cánh cửa cho sự sáng tạo không giới hạn trên nền tảng của theme gốc mà còn giúp tôi dễ dàng áp dụng các tuỳ chỉnh cá nhân mà không lo ảnh hưởng đến các cập nhật trong tương lai.</p><p>Tiếp tục hành trình tạo lập, tôi thêm logo mới cho theme để thể hiện rõ nét thương hiệu và tinh thần của website. Đồng thời, tôi cũng tiến hành tinh chỉnh giao diện bằng cách ẩn đi những block không cần thiết trong khu vực block layout, đảm bảo một trang web sạch sẽ, gọn gàng và thân thiện với người dùng.</p><p>Kết quả là một website không chỉ với diện mạo bắt mắt nhờ vào theme Bootstrap 5 Admin mà còn phản ánh được phong cách và cá tính riêng biệt qua các tuỳ biến kỹ lưỡng. Mặc dù mới chỉ là bước khởi đầu giản đơn, website này tiềm ẩn một sức mạnh tuỳ biến đáng kinh ngạc, hứa hẹn mang lại nhiều khám phá thú vị và giá trị trong tương lai.</p><p>Hãy cùng đón chờ những chia sẻ tiếp theo từ blog của tôi, nơi tôi sẽ tiếp tục mở rộng về thế giới Drupal, một công cụ không thể thiếu cho bất kỳ nhà phát triển web nào muốn chinh phục những đỉnh cao mới trong lĩnh vực công nghệ thông tin.</p>'
+              format: full_html
   field_image:
     -
       entity: b5aaea2e-9da6-4760-997b-49e9e453677e

@@ -40,6 +40,27 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Áp dụng Bản Vá Hiệu Quả trong Drupal: Hướng Dẫn Sử Dụng cweagans/composer-patches | Tự học Drupal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Trong thế giới phát triển web với Drupal, việc tinh chỉnh các mô-đun hoặc giao diện (theme) từ bên thứ ba mà không chạm vào mã nguồn gốc là một nhu cầu phổ biến. Đặc biệt là trong những tình huống bạn muốn tùy chỉnh hoặc sửa lỗi mà không muốn hay không thể đóng góp trực tiếp vào mã nguồn chính thức. Giải pháp cho vấn đề này là sử dụng các bản vá (patch) cho mô-đun hoặc giao diện đang xét. Bài viết này sẽ đi sâu vào cách bạn có thể sử dụng một công cụ hữu ích trong việc quản lý các bản vá này: plugin cweagans/composer-patches thông qua Composer.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://tuhocdrupal.localhost/ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
       alias: /ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html
@@ -47,17 +68,43 @@ default:
       pathauto: 1
   body:
     -
-      value: "<p>Trong thế giới phát triển web với Drupal, việc tinh chỉnh các mô-đun hoặc giao diện (theme) từ bên thứ ba mà không chạm vào mã nguồn gốc là một nhu cầu phổ biến. Đặc biệt là trong những tình huống bạn muốn tùy chỉnh hoặc sửa lỗi mà không muốn hay không thể đóng góp trực tiếp vào mã nguồn chính thức. Giải pháp cho vấn đề này là sử dụng các bản vá (patch) cho mô-đun hoặc giao diện đang xét. Bài viết này sẽ đi sâu vào cách bạn có thể sử dụng một công cụ hữu ích trong việc quản lý các bản vá này: plugin cweagans/composer-patches thông qua Composer.</p><p>Bước đầu tiên trong quy trình này là cài đặt plugin cweagans/composer-patches. Bạn có thể làm điều này một cách dễ dàng thông qua Composer bằng lệnh sau:</p><pre><code class=\"language-plaintext\">composer require cweagans/composer-patches</code></pre><p>Sau khi cài đặt, bạn cần phải kích hoạt plugin này trong tệp <code>composer.json</code> của mình. Điều này đảm bảo rằng Composer biết về plugin và cho phép nó hoạt động trong dự án của bạn. Dưới đây là một ví dụ về cách cấu hình:</p><pre><code class=\"language-plaintext\">\"config\": {\r\n   \"allow-plugins\": {\r\n       \"composer/installers\": true,\r\n       \"drupal/core-composer-scaffold\": true,\r\n       \"drupal/core-project-message\": true,\r\n       \"phpstan/extension-installer\": true,\r\n       \"dealerdirect/phpcodesniffer-composer-installer\": true,\r\n       \"php-http/discovery\": true,\r\n       \"cweagans/composer-patches\": true\r\n   },\r\n   \"sort-packages\": true\r\n},</code></pre><p>Bước tiếp theo, trong phần <code>extra</code> của tệp <code>composer.json</code>, bạn cần chỉ định rõ ràng việc kích hoạt vá lỗi và định nghĩa các bản vá cụ thể cho mô-đun mà bạn muốn vá:</p><pre><code class=\"language-plaintext\">\"extra\": {\r\n   \"enable-patching\": true,\r\n   \"patches\": {\r\n       \"drupal/default_content\": {\r\n           \"default_content_2640734.patch\": \"patches/default_content_2640734.patch\",\r\n           \"default_content-3160146-53.patch\": \"patches/default_content-3160146-53.patch\",\r\n           \"ui_default_content\": \"patches/ui_default_content.patch\"\r\n       }\r\n   }\r\n}</code></pre><p>Trong ví dụ trên, chúng tôi đã định nghĩa 3 bản vá cho mô-đun <code>default_content</code> (3 bản vá trên nằm trong thư mục patches thuộc mã nguồn của bạn). Điều này cho thấy sự linh hoạt của plugin trong việc quản lý nhiều bản vá cho một hoặc nhiều mô-đun.</p><p>Khi mọi thứ đã được thiết lập, mỗi khi bạn chạy <code>composer update</code>, Composer sẽ tự động áp dụng các bản vá đã được định nghĩa cho các mô-đun tương ứng. Quy trình này giúp đảm bảo rằng dự án của bạn luôn được tùy chỉnh theo đúng yêu cầu mà không làm mất đi tính toàn vẹn của mã nguồn mô-đun gốc.</p><p>Qua bài viết này, hy vọng bạn đã có cái nhìn rõ ràng về cách sử dụng cweagans/composer-patches để quản lý và áp dụng các bản vá cho mô-đun và giao diện trong dự án Drupal của mình một cách hiệu quả.</p>"
+      value: '<p>Trong thế giới phát triển web với Drupal, việc tinh chỉnh các mô-đun hoặc giao diện (theme) từ bên thứ ba mà không chạm vào mã nguồn gốc là một nhu cầu phổ biến. Đặc biệt là trong những tình huống bạn muốn tùy chỉnh hoặc sửa lỗi mà không muốn hay không thể đóng góp trực tiếp vào mã nguồn chính thức. Giải pháp cho vấn đề này là sử dụng các bản vá (patch) cho mô-đun hoặc giao diện đang xét. Bài viết này sẽ đi sâu vào cách bạn có thể sử dụng một công cụ hữu ích trong việc quản lý các bản vá này: plugin cweagans/composer-patches thông qua Composer.</p>'
       format: full_html
       summary: ''
   comment:
     -
       status: 2
       cid: 0
-      last_comment_timestamp: 1712295596
+      last_comment_timestamp: 1712296987
       last_comment_name: ''
       last_comment_uid: 1
       comment_count: 0
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7eb82c88-e972-46d1-aa16-b51d7b8f7891
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712482867
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_text:
+            -
+              value: "<p>Trong thế giới phát triển web với Drupal, việc tinh chỉnh các mô-đun hoặc giao diện (theme) từ bên thứ ba mà không chạm vào mã nguồn gốc là một nhu cầu phổ biến. Đặc biệt là trong những tình huống bạn muốn tùy chỉnh hoặc sửa lỗi mà không muốn hay không thể đóng góp trực tiếp vào mã nguồn chính thức. Giải pháp cho vấn đề này là sử dụng các bản vá (patch) cho mô-đun hoặc giao diện đang xét. Bài viết này sẽ đi sâu vào cách bạn có thể sử dụng một công cụ hữu ích trong việc quản lý các bản vá này: plugin cweagans/composer-patches thông qua Composer.</p><p>Bước đầu tiên trong quy trình này là cài đặt plugin cweagans/composer-patches. Bạn có thể làm điều này một cách dễ dàng thông qua Composer bằng lệnh sau:</p><pre><code class=\"language-plaintext\">composer require cweagans/composer-patches</code></pre><p>Sau khi cài đặt, bạn cần phải kích hoạt plugin này trong tệp <code>composer.json</code> của mình. Điều này đảm bảo rằng Composer biết về plugin và cho phép nó hoạt động trong dự án của bạn. Dưới đây là một ví dụ về cách cấu hình:</p><pre><code class=\"language-plaintext\">\"config\": {\r\n   \"allow-plugins\": {\r\n       \"composer/installers\": true,\r\n       \"drupal/core-composer-scaffold\": true,\r\n       \"drupal/core-project-message\": true,\r\n       \"phpstan/extension-installer\": true,\r\n       \"dealerdirect/phpcodesniffer-composer-installer\": true,\r\n       \"php-http/discovery\": true,\r\n       \"cweagans/composer-patches\": true\r\n   },\r\n   \"sort-packages\": true\r\n},</code></pre><p>Bước tiếp theo, trong phần <code>extra</code> của tệp <code>composer.json</code>, bạn cần chỉ định rõ ràng việc kích hoạt vá lỗi và định nghĩa các bản vá cụ thể cho mô-đun mà bạn muốn vá:</p><pre><code class=\"language-plaintext\">\"extra\": {\r\n   \"enable-patching\": true,\r\n   \"patches\": {\r\n       \"drupal/default_content\": {\r\n           \"default_content_2640734.patch\": \"patches/default_content_2640734.patch\",\r\n           \"default_content-3160146-53.patch\": \"patches/default_content-3160146-53.patch\",\r\n           \"ui_default_content\": \"patches/ui_default_content.patch\"\r\n       }\r\n   }\r\n}</code></pre><p>Trong ví dụ trên, chúng tôi đã định nghĩa 3 bản vá cho mô-đun <code>default_content</code> (3 bản vá trên nằm trong thư mục patches thuộc mã nguồn của bạn). Điều này cho thấy sự linh hoạt của plugin trong việc quản lý nhiều bản vá cho một hoặc nhiều mô-đun.</p><p>Khi mọi thứ đã được thiết lập, mỗi khi bạn chạy <code>composer update</code>, Composer sẽ tự động áp dụng các bản vá đã được định nghĩa cho các mô-đun tương ứng. Quy trình này giúp đảm bảo rằng dự án của bạn luôn được tùy chỉnh theo đúng yêu cầu mà không làm mất đi tính toàn vẹn của mã nguồn mô-đun gốc.</p><p>Qua bài viết này, hy vọng bạn đã có cái nhìn rõ ràng về cách sử dụng cweagans/composer-patches để quản lý và áp dụng các bản vá cho mô-đun và giao diện trong dự án Drupal của mình một cách hiệu quả.</p>"
+              format: full_html
   field_image:
     -
       entity: 0e08bd23-c433-488a-af93-182ca5b2af95

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d236bb25-e24c-4c07-8044-afd4843b71f1
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'pathauto pattern.png'
+  uri:
+    -
+      value: 'public://2024-04/pathauto pattern.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 59264
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712483192

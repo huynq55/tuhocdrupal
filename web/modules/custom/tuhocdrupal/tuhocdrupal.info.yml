@@ -26,13 +26,18 @@ default_content:
     - 59a147a2-6dd1-4f34-ac06-d6b0eae101ba
     - f7f2835a-deb5-4613-a5bf-ef447086cd8c
     - c78f11bf-5b84-46ec-b135-b38334f09bc5
+    - 4f24cbf1-d0f3-43b2-8e07-8dbce711e4d0
+    - 6d0585e7-0820-46b3-b071-c2fcc11bff1e
+    - 6ea3e4ea-cd54-4e5f-ac37-f8eb2675a4a4
+    - 76631dba-800a-478d-a268-474e90625dab
+    - d236bb25-e24c-4c07-8044-afd4843b71f1
+    - f88f4610-4cc1-4808-882f-220e42e3295c
   node:
     - 07a0811f-39c0-4b1d-b2e1-c1a0aee50996
     - dd00797b-82d4-462b-b687-79d1910a4ba9
     - 7d535335-a399-45d1-b4df-e0c7aab22f65
     - 97d2eb42-1b4a-448a-9915-e9efe9251da5
     - 33bae3c2-2227-4f7a-9de8-a29045ff9566
-    - 212f57c3-d2e0-4508-a6b2-f65a3881036f
     - 212f57c3-d2e0-4508-a6b2-f65a3881036f
     - ffca2a54-3c51-41ee-ae59-7b772dfaa2f8
   taxonomy_term:

@@ -86,6 +86,47 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
+          uuid: 2c05c13f-b142-4cc4-a682-25dd4f13e2d2
+          bundle: bp_columns
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712483822
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 3052167a-262f-4624-9cb1-826c40552c30
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712483825
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<p>Bạn đã bao giờ chú ý đến con số đặc biệt hiển thị cạnh các thẻ tags ở cuối mỗi bài viết của tôi chưa? Đó không phải là bất kỳ con số nào khác, mà là số lượng bài viết liên quan đến thẻ đó. Thật thú vị, phải không? Để làm được điều này, tôi đã phát triển một formatter khá đơn giản. Và trong bài viết này, tôi sẽ chia sẻ với bạn cách để bạn cũng có thể thực hiện điều tương tự.</p>'
+                      format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
           uuid: a07eb823-d6a6-4387-889f-d81722d42945
           bundle: bp_columns_two_uneven
           default_langcode: vi
@@ -431,8 +472,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 2f578197-5940-4a5c-b1b4-56d68051aa61
-          bundle: bp_simple
+          uuid: b3dc3f23-735f-4177-8ac7-b3912bd93c97
+          bundle: bp_columns
           default_langcode: vi
         default:
           status:
@@ -440,14 +481,39 @@ default:
               value: true
           created:
             -
-              value: 1712459322
+              value: 1712484029
           behavior_settings:
             -
               value: {  }
-          bp_text:
+          revision_translation_affected:
             -
-              value: '<p>Trong hướng dẫn trên, tôi đã đi qua từng bước để xây dựng một formatter đơn giản trong Drupal. Mong rằng bạn tìm thấy những thông tin này hữu ích. Nếu bạn có bất kỳ thắc mắc nào, đừng ngần ngại để lại bình luận bên dưới. Tôi luôn sẵn lòng giải đáp mọi thắc mắc của bạn!</p>'
-              format: basic_html
+              value: true
+          bp_column_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: f08fbb05-abf1-4303-8ffd-078c1bfecb52
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712484037
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  bp_text:
+                    -
+                      value: '<p>Trong hướng dẫn trên, tôi đã đi qua từng bước để xây dựng một formatter đơn giản trong Drupal. Mong rằng bạn tìm thấy những thông tin này hữu ích. Nếu bạn có bất kỳ thắc mắc nào, đừng ngần ngại để lại bình luận bên dưới. Tôi luôn sẵn lòng giải đáp mọi thắc mắc của bạn!</p>'
+                      format: basic_html
   field_image:
     -
       entity: c78f11bf-5b84-46ec-b135-b38334f09bc5
