@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: c78f11bf-5b84-46ec-b135-b38334f09bc5
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: "DALL·E 2024-04-07 10.19.05 - Craft an image showcasing the concept of user engagement and interaction on a Drupal website from a developer's perspective. Visualize a clean and mod.webp"
+  uri:
+    -
+      value: "public://2024-04/DALL·E 2024-04-07 10.19.05 - Craft an image showcasing the concept of user engagement and interaction on a Drupal website from a developer's perspective. Visualize a clean and mod.webp"
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 575938
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712459961

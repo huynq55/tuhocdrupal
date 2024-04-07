@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: fae3595f-4bdf-42c9-b260-f063edf0cd6e
+  uuid: 065a9847-4fa3-4e26-9e2c-77548c6ca019
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: DrupalDevelopment
+      value: DrupalCustomization
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'DrupalDevelopment | Tự học Drupal'
+        content: 'DrupalCustomization | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/drupaldevelopment.tag'
+        href: 'http://tuhocdrupal.localhost/drupalcustomization.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /drupaldevelopment.tag
+      alias: /drupalcustomization.tag
       langcode: vi
       pathauto: 1

@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: fae3595f-4bdf-42c9-b260-f063edf0cd6e
+  uuid: 13e058f2-cc21-4879-860e-fab2149def87
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: DrupalDevelopment
+      value: CustomFormatter
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'DrupalDevelopment | Tự học Drupal'
+        content: 'CustomFormatter | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/drupaldevelopment.tag'
+        href: 'http://tuhocdrupal.localhost/customformatter.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /drupaldevelopment.tag
+      alias: /customformatter.tag
       langcode: vi
       pathauto: 1

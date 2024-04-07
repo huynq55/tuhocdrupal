@@ -1,0 +1,478 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ffca2a54-3c51-41ee-ae59-7b772dfaa2f8
+  bundle: article
+  default_langcode: vi
+  depends:
+    c78f11bf-5b84-46ec-b135-b38334f09bc5: file
+    fae3595f-4bdf-42c9-b260-f063edf0cd6e: taxonomy_term
+    a196765d-f1e8-49c8-bcd5-cff4caaf6734: taxonomy_term
+    d6fa0a8c-2815-4797-adb0-5571254d9ea7: taxonomy_term
+    ef10aec4-e06b-44ef-a0d2-9796b1d9cd70: taxonomy_term
+    13e058f2-cc21-4879-860e-fab2149def87: taxonomy_term
+    a3d29f39-3b4e-4245-bf50-0170e0573149: taxonomy_term
+    cb3ec2b8-82d0-480e-ae1a-87c345a152ab: taxonomy_term
+    065a9847-4fa3-4e26-9e2c-77548c6ca019: taxonomy_term
+    f17c4e42-39e7-46c7-ac2f-2b82d57d6409: taxonomy_term
+    20718619-7101-46dd-b964-0dca22406e1e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Tăng Cường Tương Tác Người Dùng: Hướng Dẫn Tạo Formatter Đếm Số Tham Chiếu Trong Drupal'
+  created:
+    -
+      value: 1712456002
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Tăng Cường Tương Tác Người Dùng: Hướng Dẫn Tạo Formatter Đếm Số Tham Chiếu Trong Drupal | Tự học Drupal'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Bạn đã bao giờ chú ý đến con số đặc biệt hiển thị cạnh các thẻ tags ở cuối mỗi bài viết của tôi chưa? Đó không phải là bất kỳ con số nào khác, mà là số lượng bài viết liên quan đến thẻ đó. Thật thú vị, phải không? Để làm được điều này, tôi đã phát triển một formatter khá đơn giản. Và trong bài viết này, tôi sẽ chia sẻ với bạn cách để bạn cũng có thể thực hiện điều tương tự.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://tuhocdrupal.localhost/tang-cuong-tuong-tac-nguoi-dung-huong-dan-tao-formatter-dem-so-tham-chieu-trong-drupal.html'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
+  path:
+    -
+      alias: /tang-cuong-tuong-tac-nguoi-dung-huong-dan-tao-formatter-dem-so-tham-chieu-trong-drupal.html
+      langcode: vi
+      pathauto: 1
+  body:
+    -
+      value: '<p>Bạn đã bao giờ chú ý đến con số đặc biệt hiển thị cạnh các thẻ tags ở cuối mỗi bài viết của tôi chưa? Đó không phải là bất kỳ con số nào khác, mà là số lượng bài viết liên quan đến thẻ đó. Thật thú vị, phải không? Để làm được điều này, tôi đã phát triển một formatter khá đơn giản. Và trong bài viết này, tôi sẽ chia sẻ với bạn cách để bạn cũng có thể thực hiện điều tương tự.</p>'
+      format: basic_html
+      summary: ''
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1712456152
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a07eb823-d6a6-4387-889f-d81722d42945
+          bundle: bp_columns_two_uneven
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712456171
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: e98bd6ef-039a-4723-8f2f-5906c1c6479f
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456378
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<p>Bắt đầu bằng việc tạo ra file sau trong module của bạn:</p><pre><code class="language-plaintext">src/Plugin/Field/FieldFormatter/EntityReferenceCountFormatter.php</code></pre><p>File này chứa định nghĩa cho một Formatter mới, thừa kế từ lớp <strong>FormatterBase</strong>. Việc tiêm các phụ thuộc cần thiết được thực hiện một cách mượt mà như thể hiện trong đoạn code trên.</p>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: bb9aa342-83ea-4281-bb98-687e31bbd1bf
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456389
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: "<pre><code class=\"language-php\">/**\r\n* Plugin implementation of the 'entity_reference_count_formatter' formatter.\r\n*\r\n* @FieldFormatter(\r\n*   id = \"entity_reference_count_formatter\",\r\n*   label = @Translation(\"Entity Reference Count Formatter\"),\r\n*   field_types = {\r\n*     \"entity_reference\"\r\n*   }\r\n* )\r\n*/\r\nclass EntityReferenceCountFormatter extends FormatterBase {\r\n public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings, protected EntityTypeManagerInterface $entityTypeManager) {\r\n   parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);\r\n }\r\n /**\r\n  * {@inheritdoc}\r\n  */\r\n public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {\r\n   return new static($plugin_id, $plugin_definition, $configuration['field_definition'], $configuration['settings'], $configuration['label'], $configuration['view_mode'], $configuration['third_party_settings'], $container-&gt;get('entity_type.manager'));\r\n }</code></pre>"
+                      format: full_html
+          bp_column_style_2:
+            -
+              value: paragraph--style--33-66
+          bp_header:
+            -
+              value: 'Khởi tạo Lớp FieldFormatter'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9c059a4e-fcb4-4aab-a241-e5dcc60fae20
+          bundle: bp_columns_two_uneven
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712456171
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 76052deb-2a3c-41c0-b084-7b2be7a566be
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456378
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<p>Trong quá trình phát triển với Drupal, việc tùy chỉnh cách thức hiển thị dữ liệu là một phần không thể thiếu. Một ví dụ điển hình là việc override phương thức <code>viewElements</code> trong một formatter tùy chỉnh, cho phép chúng ta kiểm soát chặt chẽ việc hiển thị các tham chiếu đến thực thể. Dưới đây là cách thực hiện điều này:</p><h4>1. <strong>Xác định Điều Kiện Lọc Theo Bundle</strong></h4><p>Điểm xuất phát của việc override là lấy giá trị <code>filter_by_bundle</code> từ cài đặt, quyết định liệu có áp dụng lọc các tham chiếu thực thể theo loại bundle hay không. Trong một số trường hợp, như khi chúng ta có các thực thể của cùng một loại nhưng thuộc các bundle khác nhau - ví dụ, <code>Article</code> và <code>Page</code> - việc này giúp xác định liệu chúng ta muốn đếm chúng một cách riêng biệt (khi <code>filter_by_bundle</code> là TRUE) hay đếm chung (khi là FALSE).</p><h4>2. <strong>Tạo và Thực thi Câu Truy Vấn</strong></h4><p>Sau khi xác định liệu có lọc theo bundle hay không, bước tiếp theo là tạo ra một câu truy vấn để lấy số lượng tham chiếu đến thực thể cụ thể dựa trên các tiêu chí như loại thực thể (<code>$entityType</code>, ví dụ như <code>Article</code>), trường tham chiếu (<code>$referenceField</code>, ví dụ như <code>field_tags</code>), và ID của thực thể được tham chiếu (<code>$referencedEntity-&gt;id()</code>, giả sử là ID của một taxonomy term cụ thể).</p><h4>3. <strong>Xử lý và Trả Về Kết quả</strong></h4><p>Kết quả số lượng tham chiếu được lưu vào biến <code>$referenceCount</code>, và URL của thực thể được tham chiếu được lưu trong <code>$entityUrl</code>. Các thông tin này sau đó được đóng gói vào một mảng <code>$elements</code>, bao gồm các thông tin như tên thực thể, số lượng tham chiếu, và URL. Đồng thời, đính kèm với mảng này là thư viện JS/CSS cần thiết cho việc hiển thị, thông qua khóa <code>#attached</code>.</p><p>Qua đây, chúng ta có thể thấy rằng việc tùy chỉnh phương thức <code>viewElements</code> không chỉ giúp tăng cường khả năng kiểm soát việc hiển thị dữ liệu mà còn mở ra khả năng tùy biến mạnh mẽ, cho phép các nhà phát triển Drupal điều chỉnh trải nghiệm người dùng một cách tinh tế nhất.</p>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 8fcb406d-0af6-4fa7-8cf2-516ef3675927
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456389
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: "<pre><code class=\"language-php\">/**\r\n   * {@inheritdoc}\r\n   */\r\n  public function viewElements(FieldItemListInterface $items, $langcode) {\r\n    $elements = [];\r\n    $filterByBundle = $this-&gt;getSetting('filter_by_bundle');\r\n\r\n    foreach ($items as $delta =&gt; $item) {\r\n      $referencedEntity = $item-&gt;entity;\r\n\r\n      $fieldDefinition = $item-&gt;getFieldDefinition();\r\n      $entityType = $fieldDefinition-&gt;getTargetEntityTypeId();\r\n      $entityBundle = $fieldDefinition-&gt;getTargetBundle();\r\n      $referenceField = $fieldDefinition-&gt;getName();\r\n\r\n      $query = $this-&gt;entityTypeManager-&gt;getStorage($entityType)-&gt;getQuery()\r\n        -&gt;accessCheck(FALSE)\r\n        -&gt;condition($referenceField, $referencedEntity-&gt;id());\r\n\r\n      if ($filterByBundle) {\r\n        $query-&gt;condition('type', $entityBundle);\r\n      }\r\n\r\n      $referenceCount = $query-&gt;count()-&gt;execute();\r\n\r\n      $entityUrl = $referencedEntity-&gt;toUrl()-&gt;toString();\r\n\r\n      $elements[$delta] = [\r\n        '#theme' =&gt; 'entity_reference_count_formatter',\r\n        '#entity_name' =&gt; $referencedEntity-&gt;label(),\r\n        '#count' =&gt; $referenceCount,\r\n        '#url' =&gt; $entityUrl,\r\n        '#attached' =&gt; [\r\n          'library' =&gt; [\r\n            'entity_reference_count_formatter/entity_reference_count_formatter',\r\n          ],\r\n        ],\r\n      ];\r\n    }\r\n\r\n    return $elements;\r\n  }</code></pre>"
+                      format: full_html
+          bp_column_style_2:
+            -
+              value: paragraph--style--33-66
+          bp_header:
+            -
+              value: 'Tùy chỉnh Phương thức viewElements để Thao tác với Thẻ'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b62e0303-f7ad-4fe9-ab5a-5e42bb8c9ca4
+          bundle: bp_columns_two_uneven
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712456171
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 65e74a69-cdbc-4995-90e4-f15ae7a720f2
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456378
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<div class="flex flex-grow flex-col max-w-full"><div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" data-message-author-role="assistant" data-message-id="26d002e1-8345-447a-8fdc-f526d627b158" dir="auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Trong quá trình phát triển plugin hoặc module trong Drupal, việc cung cấp các tùy chọn cài đặt cho người dùng cuối là một phần không thể thiếu, giúp tăng tính linh hoạt và dễ dàng tùy chỉnh theo nhu cầu sử dụng. Một ví dụ điển hình cho việc này là khai báo cài đặt cho tùy chọn <code>filter_by_bundle</code> trong một plugin.</p><h4>Cài Đặt Tùy Chọn Lọc Theo Bundle</h4><p>Trong đoạn code mẫu trên, việc khai báo và quản lý cài đặt cho tùy chọn <code>filter_by_bundle</code> được thực hiện một cách rõ ràng và dễ hiểu. Tùy chọn này cho phép người dùng quyết định liệu số lượng tham chiếu sẽ được lọc theo bundle của thực thể hay không. Cụ thể, việc triển khai bao gồm:</p><ul><li><strong>Thêm Checkbox trong Form Cài Đặt</strong>: Một checkbox được thêm vào form cài đặt của plugin, cho phép người dùng kích hoạt hoặc vô hiệu hóa tính năng lọc theo bundle. Checkbox này đi kèm với tiêu đề, mô tả, và giá trị mặc định được lấy từ cài đặt hiện tại của plugin.</li><li><strong>Tóm Tắt Cài Đặt</strong>: Phần tóm tắt cài đặt cung cấp một cái nhìn nhanh về trạng thái của tùy chọn <code>filter_by_bundle</code>, thông qua việc hiển thị "Yes" nếu tùy chọn được kích hoạt và "No" nếu ngược lại. Điều này giúp người quản trị hiểu được cách thức hiện tại plugin đang hoạt động.</li><li><strong>Cài Đặt Mặc Định</strong>: Giá trị mặc định cho tùy chọn <code>filter_by_bundle</code> được đặt là TRUE, tức là tính năng lọc theo bundle được kích hoạt ngay từ đầu. Tuy nhiên, giá trị này có thể dễ dàng được thay đổi thành FALSE, tùy vào nhu cầu của người dùng cuối hoặc người quản trị.</li></ul><h4>Ý Nghĩa và Lợi Ích</h4><p>Việc cung cấp tùy chọn cài đặt như <code>filter_by_bundle</code> không chỉ làm tăng tính năng động và linh hoạt của plugin mà còn giúp người dùng cuối có quyền kiểm soát cao hơn đối với cách thức dữ liệu được xử lý và hiển thị. Tính năng này phản ánh cam kết trong việc tạo ra các giải pháp tùy biến cao, đáp ứng nhu cầu đa dạng của cộng đồng người dùng Drupal.</p></div></div></div>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 41e0973f-5ca3-4905-ba80-382c418017b5
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456389
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: "<pre><code class=\"language-php\">/**\r\n   * {@inheritdoc}\r\n   */\r\n  public function settingsForm(array $form, FormStateInterface $form_state) {\r\n    $elements = parent::settingsForm($form, $form_state);\r\n\r\n    // Thêm một checkbox để cho phép lọc theo bundle.\r\n    $elements['filter_by_bundle'] = [\r\n      '#type' =&gt; 'checkbox',\r\n      '#title' =&gt; $this-&gt;t('Filter by bundle'),\r\n      '#default_value' =&gt; $this-&gt;getSetting('filter_by_bundle'),\r\n      '#description' =&gt; $this-&gt;t('If checked, the reference count will be filtered by the entity bundle.'),\r\n    ];\r\n\r\n    return $elements;\r\n  }\r\n\r\n  /**\r\n   * {@inheritdoc}\r\n   */\r\n  public function settingsSummary() {\r\n    $summary = [];\r\n\r\n    $filterByBundle = $this-&gt;getSetting('filter_by_bundle') ? $this-&gt;t('Yes') : $this-&gt;t('No');\r\n    $summary[] = $this-&gt;t('Filter by bundle: @filter_by_bundle', ['@filter_by_bundle' =&gt; $filterByBundle]);\r\n\r\n    return $summary;\r\n  }\r\n\r\n  /**\r\n   * {@inheritdoc}\r\n   */\r\n  public static function defaultSettings() {\r\n    return [\r\n    // Giá trị mặc định, thay đổi thành FALSE nếu bạn muốn.\r\n      'filter_by_bundle' =&gt; TRUE,\r\n    ] + parent::defaultSettings();\r\n  }</code></pre>"
+                      format: full_html
+          bp_column_style_2:
+            -
+              value: paragraph--style--33-66
+          bp_header:
+            -
+              value: 'Khai Báo Cài Đặt cho Tùy Chọn Filter by Bundle'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: aa249e8c-2dc1-4890-86ae-f9e3aca74185
+          bundle: bp_columns_two_uneven
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712456171
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 3ad8012f-2793-49bd-aaee-9b0dba737b79
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456378
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<p>Trong quá trình phát triển mô-đun <code>entity_reference_count_formatter</code> cho Drupal, một bước quan trọng là việc khai báo <code>hook_theme</code> trong file <code>entity_reference_count_formatter.module</code>. Điều này nhằm mục đích cung cấp một cách thức chuẩn xác để định nghĩa các template và biến sẽ được sử dụng trong quá trình render dữ liệu ra frontend, tăng cường khả năng tùy biến và kiểm soát giao diện người dùng cuối.</p><h4>Cấu Hình <code>hook_theme</code></h4><p>Trong <code>hook_theme</code>, bạn sẽ cần khai báo một mảng chứa thông tin về các template và biến tương ứng của mô-đun. Đối với <code>entity_reference_count_formatter</code>, cấu hình bao gồm:</p><ul><li><strong>Template</strong>: Một file template được định nghĩa với tên <code>entity-reference-count-formatter</code>. Đây là file template (thường là <code>.twig</code> trong Drupal 8 trở lên) mà Drupal sẽ sử dụng để render dữ liệu của mô-đun này.</li><li><strong>Biến</strong>: Ba biến được khai báo là <code>entity_name</code>, <code>count</code>, và <code>url</code>, tương ứng với tên thực thể (ví dụ, tên của taxonomy term hoặc tag), số lượng nội dung được gắn với thực thể này, và URL của thực thể. Mục đích là để truyền dữ liệu này vào template, giúp tạo ra một giao diện người dùng động và tương tác.</li></ul><h4>Mục Đích và Lợi Ích</h4><p>Khai báo này giúp Drupal hiểu cách thức dữ liệu từ mô-đun <code>entity_reference_count_formatter</code> sẽ được hiển thị, đồng thời tạo điều kiện cho việc tùy chỉnh giao diện dựa trên dữ liệu đó mà không gây ảnh hưởng tới mã nguồn cốt lõi của Drupal hay các mô-đun khác.</p><p>Thông qua việc sử dụng <code>hook_theme</code>, mô-đun có thể tạo ra một trải nghiệm người dùng phong phú và tùy biến cao, phản ánh chính xác cách thức các nhà phát triển muốn dữ liệu của họ được hiển thị và tương tác trên website. Điều này không chỉ cải thiện khả năng truy cập và tính năng động của site mà còn cho phép mô-đun tương tác một cách linh hoạt với hệ thống Drupal rộng lớn hơn, làm phong phú thêm bộ công cụ sẵn có cho cả nhà phát triển và người dùng cuối.</p>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 7e9dcf38-762f-4c96-909d-342ebfea84c0
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456389
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: "<pre><code class=\"language-php\">&lt;?php\r\n\r\n/**\r\n * @file\r\n * Implements some hooks for the entity_reference_count_formatter module.\r\n */\r\n\r\n/**\r\n * Implements hook_theme().\r\n */\r\nfunction entity_reference_count_formatter_theme($existing, $type, $theme, $path) {\r\n  return [\r\n    'entity_reference_count_formatter' =&gt; [\r\n      'variables' =&gt; ['entity_name' =&gt; NULL, 'count' =&gt; NULL, 'url' =&gt; NULL],\r\n      'template' =&gt; 'entity-reference-count-formatter',\r\n    ],\r\n  ];\r\n}\r\n</code></pre>"
+                      format: full_html
+          bp_column_style_2:
+            -
+              value: paragraph--style--33-66
+          bp_header:
+            -
+              value: 'Khai Báo hook_theme trong Mô-đun entity_reference_count_formatter'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 364130ee-bef5-414e-89e0-fce3ec23d1a9
+          bundle: bp_columns_two_uneven
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712456171
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: cd678d98-4bd6-4a1c-a223-b59784e5f00b
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456378
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: '<div class="flex flex-grow flex-col max-w-full"><div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" data-message-author-role="assistant" data-message-id="38e9bbf5-a0f0-4bc3-adb5-53dc93c29f78" dir="auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Khi phát triển module hoặc theme trong Drupal, việc sử dụng Twig và CSS là không thể thiếu để tạo ra giao diện người dùng cuối cùng. File Twig kết hợp với CSS không chỉ giúp thông tin hiển thị một cách mạch lạc mà còn đảm bảo tính thẩm mỹ cao cho trang web. Dưới đây là cách thức chúng tôi sử dụng hai công nghệ này để tạo ra giao diện cho người dùng.</p><h4>Giao Diện với File Twig</h4><p>Trong file Twig, chúng tôi tạo một khối <code>div</code> với class <code>entity-reference-count-formatter</code>, bên trong đó chứa một liên kết (tag <code>a</code>) dẫn đến URL của thực thể và hiển thị tên của thực thể đó. Bên cạnh đó, một <code>span</code> với class <code>count-circle</code> được sử dụng để hiển thị số lượng tham chiếu đến thực thể này. Cách thức sắp xếp này giúp thông tin được trình bày một cách rõ ràng và dễ nhìn.</p><h4>Định Dạng Với CSS</h4><p>File CSS đóng một vai trò quan trọng trong việc định dạng và tạo ra vẻ ngoài cuối cùng cho giao diện người dùng. Với class <code>count-circle</code>, chúng tôi thiết kế một hình tròn nhỏ, có kích thước và màu sắc được xác định cụ thể, chứa số lượng tham chiếu. Màu nền nhẹ nhàng và màu chữ tương phản giúp thông tin dễ đọc và thu hút mắt nhìn. Đặc biệt, việc sử dụng <code>border-radius: 50%;</code> tạo ra hình dạng tròn hoàn hảo cho span, trong khi <code>line-height</code> và <code>text-align</code> đảm bảo số lượng được căn giữa chính xác.</p><h4>Kết Luận</h4><p>Sự kết hợp giữa file Twig và CSS cho phép chúng tôi tạo ra một giao diện người dùng không chỉ thông minh từ mặt chức năng mà còn đẹp mắt và dễ sử dụng. Việc này khẳng định tầm quan trọng của việc thiết kế giao diện trong phát triển web, không chỉ với Drupal mà còn với mọi nền tảng phát triển web khác.</p></div></div></div>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: bc6f5cc9-0fb3-40fc-af4c-0919dab6ff0b
+                  bundle: bp_simple
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712456389
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_text:
+                    -
+                      value: "<p>entity-reference-count-formatter.html.twig</p><pre><code class=\"language-plaintext\">&lt;div class=\"entity-reference-count-formatter\"&gt;\r\n &lt;a href=\"{{ url }}\" class=\"entity-name\"&gt;{{ entity_name }}&lt;/a&gt;\r\n &lt;span class=\"count-circle\"&gt;{{ count }}&lt;/span&gt;\r\n&lt;/div&gt;</code></pre><p>entity_reference_count_formatter.css</p><pre><code class=\"language-css\">.count-circle {\r\n display: inline-block;\r\n width: 20px;\r\n height: 20px;\r\n line-height: 20px;\r\n text-align: center;\r\n border-radius: 50%;\r\n background-color: #f0f0f0;\r\n color: #333;\r\n font-weight: bold;\r\n}</code></pre><p>&nbsp;</p>"
+                      format: full_html
+          bp_column_style_2:
+            -
+              value: paragraph--style--33-66
+          bp_header:
+            -
+              value: 'Tạo Giao Diện Đẹp Mắt với File Twig và CSS'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2f578197-5940-4a5c-b1b4-56d68051aa61
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712459322
+          behavior_settings:
+            -
+              value: {  }
+          bp_text:
+            -
+              value: '<p>Trong hướng dẫn trên, tôi đã đi qua từng bước để xây dựng một formatter đơn giản trong Drupal. Mong rằng bạn tìm thấy những thông tin này hữu ích. Nếu bạn có bất kỳ thắc mắc nào, đừng ngần ngại để lại bình luận bên dưới. Tôi luôn sẵn lòng giải đáp mọi thắc mắc của bạn!</p>'
+              format: basic_html
+  field_image:
+    -
+      entity: c78f11bf-5b84-46ec-b135-b38334f09bc5
+      alt: "an image showcasing the concept of user engagement and interaction on a Drupal website from a developer's perspective"
+      title: ''
+      width: 1024
+      height: 1024
+  field_tags:
+    -
+      entity: fae3595f-4bdf-42c9-b260-f063edf0cd6e
+    -
+      entity: a196765d-f1e8-49c8-bcd5-cff4caaf6734
+    -
+      entity: d6fa0a8c-2815-4797-adb0-5571254d9ea7
+    -
+      entity: ef10aec4-e06b-44ef-a0d2-9796b1d9cd70
+    -
+      entity: 13e058f2-cc21-4879-860e-fab2149def87
+    -
+      entity: a3d29f39-3b4e-4245-bf50-0170e0573149
+    -
+      entity: cb3ec2b8-82d0-480e-ae1a-87c345a152ab
+    -
+      entity: 065a9847-4fa3-4e26-9e2c-77548c6ca019
+    -
+      entity: f17c4e42-39e7-46c7-ac2f-2b82d57d6409
+    -
+      entity: 20718619-7101-46dd-b964-0dca22406e1e

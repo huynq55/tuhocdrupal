@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: fae3595f-4bdf-42c9-b260-f063edf0cd6e
+  uuid: a196765d-f1e8-49c8-bcd5-cff4caaf6734
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: DrupalDevelopment
+      value: FieldFormatter
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'DrupalDevelopment | Tự học Drupal'
+        content: 'FieldFormatter | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/drupaldevelopment.tag'
+        href: 'http://tuhocdrupal.localhost/fieldformatter.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /drupaldevelopment.tag
+      alias: /fieldformatter.tag
       langcode: vi
       pathauto: 1

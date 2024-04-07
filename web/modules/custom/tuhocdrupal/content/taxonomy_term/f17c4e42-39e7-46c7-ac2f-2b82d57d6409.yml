@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: taxonomy_term
-  uuid: fae3595f-4bdf-42c9-b260-f063edf0cd6e
+  uuid: f17c4e42-39e7-46c7-ac2f-2b82d57d6409
   bundle: tags
   default_langcode: vi
 default:
@@ -10,7 +10,7 @@ default:
       value: true
   name:
     -
-      value: DrupalDevelopment
+      value: UserEngagement
   weight:
     -
       value: 0
@@ -25,12 +25,12 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'DrupalDevelopment | Tự học Drupal'
+        content: 'UserEngagement | Tự học Drupal'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/drupaldevelopment.tag'
+        href: 'http://tuhocdrupal.localhost/userengagement.tag'
     -
       tag: meta
       attributes:
@@ -38,6 +38,6 @@ default:
         content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
   path:
     -
-      alias: /drupaldevelopment.tag
+      alias: /userengagement.tag
       langcode: vi
       pathauto: 1
