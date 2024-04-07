@@ -300,11 +300,11 @@ default:
                       value: {  }
                   bp_header:
                     -
-                      value: 'Cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời được chiếu sáng bởi ánh đèn neon'
+                      value: 'Cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời'
                   bp_image_field:
                     -
                       entity: f7f2835a-deb5-4613-a5bf-ef447086cd8c
-                      alt: 'cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời được chiếu sáng bởi ánh đèn neon'
+                      alt: 'cảnh đô thị sôi động vào lúc hoàng hôn với những tòa nhà chọc trời'
                       title: ''
                       width: 1792
                       height: 1024
@@ -511,6 +511,276 @@ default:
                   bp_tab_section_title:
                     -
                       value: 'Tab 2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6113d2e0-8813-461a-a924-11d32ecc2585
+          bundle: bp_columns
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712455256
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: e4379d75-03d1-4f50-ae4a-b9516b80d6da
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455266
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Column 1 1'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 9b9017d8-52ff-4731-9ca0-954b442398b5
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455274
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Column 1 2'
+          bp_header:
+            -
+              value: 'Column 1'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3048f381-6716-4fa9-bca1-d09e255753fa
+          bundle: bp_columns
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712455307
+          behavior_settings:
+            -
+              value: {  }
+          bp_column_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 1598e351-daab-4795-8a73-ec6e90ba62ab
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455319
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Column 2 1'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 98356cc5-d132-451d-9918-fb1fc3079d11
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455340
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Column 2 2'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: ca2aac0a-115a-4307-abe7-ba0d551b5c54
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455346
+                  behavior_settings:
+                    -
+                      value: {  }
+                  bp_header:
+                    -
+                      value: 'Column 2 3'
+          bp_header:
+            -
+              value: 'Column 2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: af80f121-25ef-442b-a361-dc7d2990e107
+          bundle: bp_columns
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712455543
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_column_content:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 295f79a2-563a-422e-9956-877a0e2f6644
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455585
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  bp_header:
+                    -
+                      value: 'Column 3 1'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: fb61abdd-05e1-4832-8ce2-b9301fa7ecae
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455602
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  bp_header:
+                    -
+                      value: 'Column 3 2'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 236f9063-47b9-4a00-a695-1368ffac9933
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455606
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  bp_header:
+                    -
+                      value: 'Column 3 3'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: b50428cc-4e84-4f8d-9565-9e7663bcebfd
+                  bundle: bp_columns
+                  default_langcode: vi
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1712455610
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  bp_header:
+                    -
+                      value: 'Column 3 4'
+          bp_header:
+            -
+              value: 'Column 3'
   field_image:
     -
       entity: 59a147a2-6dd1-4f34-ac06-d6b0eae101ba
