@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/urlmanagement.tag'
+        href: 'https://tuhocdrupal.blog/urlmanagement.tag'
     -
       tag: meta
       attributes:

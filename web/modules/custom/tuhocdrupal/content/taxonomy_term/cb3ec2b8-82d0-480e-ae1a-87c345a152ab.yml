@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/webdevelopment.tag'
+        href: 'https://tuhocdrupal.blog/webdevelopment.tag'
     -
       tag: meta
       attributes:
