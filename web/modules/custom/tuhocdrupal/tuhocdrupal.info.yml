@@ -1,4 +1,4 @@
-name: 'Tu hoc Drupal'
+892b755f-d4d7-4604-8ab8-31607bb292d5name: 'Tu hoc Drupal'
 type: module
 description: 'Module for website tuhocdrupal'
 package: Custom
@@ -33,6 +33,10 @@ default_content:
     - 76631dba-800a-478d-a268-474e90625dab
     - d236bb25-e24c-4c07-8044-afd4843b71f1
     - f88f4610-4cc1-4808-882f-220e42e3295c
+    - 892b755f-d4d7-4604-8ab8-31607bb292d5
+    - b85a99e4-bcc1-4c88-b723-1407f6cde8d8
+    - cc805321-ca7e-408e-b006-6363144e3a49
+    - ec41e57e-66c3-42a2-81f6-3541771fb505
   node:
     - 07a0811f-39c0-4b1d-b2e1-c1a0aee50996
     - dd00797b-82d4-462b-b687-79d1910a4ba9
@@ -41,6 +45,7 @@ default_content:
     - 33bae3c2-2227-4f7a-9de8-a29045ff9566
     - 212f57c3-d2e0-4508-a6b2-f65a3881036f
     - ffca2a54-3c51-41ee-ae59-7b772dfaa2f8
+    - 83b154c3-f990-424e-b3f8-e4de76bd2ce9
   taxonomy_term:
     - 5aa272df-52a5-41e4-b881-23f83eac1f1a
     - 7b0fcbba-0e29-44f8-b223-b0ffa08f8928
@@ -85,3 +90,7 @@ default_content:
     - a196765d-f1e8-49c8-bcd5-cff4caaf6734
     - d6fa0a8c-2815-4797-adb0-5571254d9ea7
     - f17c4e42-39e7-46c7-ac2f-2b82d57d6409
+    - 3ef303f9-cb7d-4d54-95e3-ac1b54173014
+    - 7a732033-9078-4d1d-838d-89ca350c4077
+    - 8ecbed4f-977d-4a8b-bfb8-6de382d22258
+    - 47050a45-b2a9-4548-b69d-50b4429842b0

@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 8ecbed4f-977d-4a8b-bfb8-6de382d22258
+  bundle: tags
+  default_langcode: vi
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: NodeAccess
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'NodeAccess | Tự học Drupal'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://tuhocdrupal.blog/nodeaccess.tag'
+    -
+      tag: meta
+      attributes:
+        name: google-site-verification
+        content: UpqrJqJUUYXsl9THok4BEGV590KxfhshfKgAo3tH7p4
+  path:
+    -
+      alias: /nodeaccess.tag
+      langcode: vi
+      pathauto: 1

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 892b755f-d4d7-4604-8ab8-31607bb292d5
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'DALL·E 2024-04-08 16.19.27 - Illustrate a conceptual image showing a Drupal interface on a computer screen with various sections labeled for content types, user roles, and access .webp'
+  uri:
+    -
+      value: 'public://2024-04/DALL·E 2024-04-08 16.19.27 - Illustrate a conceptual image showing a Drupal interface on a computer screen with various sections labeled for content types, user roles, and access .webp'
+  filemime:
+    -
+      value: image/webp
+  filesize:
+    -
+      value: 313470
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712568001

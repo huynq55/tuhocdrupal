@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b85a99e4-bcc1-4c88-b723-1407f6cde8d8
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Grants per content type settings.png'
+  uri:
+    -
+      value: 'public://2024-04/Grants per content type settings.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 56301
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712566648

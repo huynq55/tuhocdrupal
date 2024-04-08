@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: cc805321-ca7e-408e-b006-6363144e3a49
+  default_langcode: vi
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'Roles settings -- select roles and set role display names.png'
+  uri:
+    -
+      value: 'public://2024-04/Roles settings -- select roles and set role display names.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 73995
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1712567055
