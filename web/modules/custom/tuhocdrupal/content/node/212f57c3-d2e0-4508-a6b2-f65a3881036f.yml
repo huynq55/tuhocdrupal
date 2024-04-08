@@ -58,7 +58,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/kham-pha-suc-manh-cua-bootstrap-paragraphs-trong-drupal.html'
+        href: 'https://tuhocdrupal.blog/kham-pha-suc-manh-cua-bootstrap-paragraphs-trong-drupal.html'
     -
       tag: meta
       attributes:

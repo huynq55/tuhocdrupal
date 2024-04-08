@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/customformatter.tag'
+        href: 'https://tuhocdrupal.blog/customformatter.tag'
     -
       tag: meta
       attributes:

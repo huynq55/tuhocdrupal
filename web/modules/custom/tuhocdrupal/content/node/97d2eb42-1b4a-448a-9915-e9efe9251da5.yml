@@ -55,7 +55,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/kham-pha-suc-manh-cua-module-default-content-dua-quan-ly-noi-dung-drupal-len-mot-tam-cao-moi.html'
+        href: 'https://tuhocdrupal.blog/kham-pha-suc-manh-cua-module-default-content-dua-quan-ly-noi-dung-drupal-len-mot-tam-cao-moi.html'
     -
       tag: meta
       attributes:

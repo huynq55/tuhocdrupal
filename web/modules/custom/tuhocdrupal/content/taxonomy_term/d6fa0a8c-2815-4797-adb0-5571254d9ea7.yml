@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/entityreference.tag'
+        href: 'https://tuhocdrupal.blog/entityreference.tag'
     -
       tag: meta
       attributes:

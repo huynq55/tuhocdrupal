@@ -55,7 +55,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/kham-pha-suc-manh-cua-drupal-xuat-va-quan-ly-cau-hinh-hieu-qua.html'
+        href: 'https://tuhocdrupal.blog/kham-pha-suc-manh-cua-drupal-xuat-va-quan-ly-cau-hinh-hieu-qua.html'
     -
       tag: meta
       attributes:

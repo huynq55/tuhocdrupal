@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/bootstrapmodal.tag'
+        href: 'https://tuhocdrupal.blog/bootstrapmodal.tag'
     -
       tag: meta
       attributes:

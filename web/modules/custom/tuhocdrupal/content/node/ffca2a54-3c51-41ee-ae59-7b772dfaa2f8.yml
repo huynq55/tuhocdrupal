@@ -56,7 +56,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/tang-cuong-tuong-tac-nguoi-dung-huong-dan-tao-formatter-dem-so-tham-chieu-trong-drupal.html'
+        href: 'https://tuhocdrupal.blog/tang-cuong-tuong-tac-nguoi-dung-huong-dan-tao-formatter-dem-so-tham-chieu-trong-drupal.html'
     -
       tag: meta
       attributes:

@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/fieldformatter.tag'
+        href: 'https://tuhocdrupal.blog/fieldformatter.tag'
     -
       tag: meta
       attributes:

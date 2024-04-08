@@ -5,6 +5,8 @@ _meta:
   bundle: article
   default_langcode: vi
   depends:
+    dc58358b-ab71-44da-b477-69546a2ccc3e: file
+    0f029eca-c95e-460e-947e-93471b5643ac: file
     e72449c4-4721-410e-9f1d-57939cb97f4e: file
     afda2d8c-d9d2-4d6f-b7d6-e4d6e45986c1: taxonomy_term
     8c7715fb-f6b4-4202-a919-681852a40d5c: taxonomy_term
@@ -68,17 +70,149 @@ default:
       pathauto: 1
   body:
     -
-      value: '<p>Xin chào quý đọc giả. Hôm nay, chúng ta sẽ cùng khám phá một trong những công cụ không thể thiếu cho việc quản lý URL trên Drupal: Module <a href="https://www.drupal.org/project/pathauto">Pathauto</a>. Đây là một giải pháp tối ưu giúp tạo ra các bí danh (alias) tự động cho nội dung trên trang web của bạn, mang lại một cấu trúc URL thân thiện hơn cho cả người dùng lẫn công cụ tìm kiếm.</p><p>Trong Drupal, mặc định, mỗi phần nội dung được gán một đường dẫn dựa trên ID, chẳng hạn như <strong>/node/1</strong> hay <strong>/taxonomy/term/3</strong>. Tuy nhiên, để tăng cường tính dễ đọc và tối ưu hóa cho SEO, việc tạo ra các alias URL là vô cùng cần thiết. Điều này có thể thực hiện thủ công mỗi khi đăng tải nội dung hoặc tự động hóa qua Module Pathauto, một công cụ mạnh mẽ mà bất kỳ người quản trị Drupal nào cũng nên biết đến.</p><p>Khi bạn đã hoàn tất việc cài đặt Pathauto, bạn sẽ được chuyển hướng đến mục cấu hình qua đường dẫn <strong>/admin/config/search/path/patterns</strong> để thiết lập các mẫu URL tự động (patterns). Tại đây, bạn có thể định nghĩa các quy tắc đặc biệt để Pathauto tự động sinh ra alias cho từng loại nội dung. Chẳng hạn, bạn có thể tạo một quy tắc để mỗi node mới được tạo ra sẽ tự động có một URL dạng <strong>[node:title].html</strong>.<br>&nbsp;</p><img src="/sites/default/files/inline-images/image.png" data-entity-uuid="d977ca74-228f-4a28-887e-abbeeab8a04c" data-entity-type="file" alt="drupal pathauto pattern" width="557" height="619" data-align="center"><p>Giả sử, bạn vừa tạo một bài viết với tiêu đề "Cài đặt Drupal cơ bản". Với quy tắc đã được thiết lập, URL của bài viết này sẽ trở thành <strong>/cai-dat-drupal-co-ban.html</strong>, giúp người dùng dễ dàng nhớ và truy cập, đồng thời tăng khả năng xuất hiện trên các công cụ tìm kiếm.</p><p>Đối với những nội dung đã tồn tại mà chưa có alias, hoặc bạn muốn tạo alias mới cho chúng, Pathauto cung cấp một tính năng mạnh mẽ cho phép bạn thực hiện việc này hàng loạt. Bạn chỉ cần truy cập vào <strong>/admin/config/search/path/update_bulk</strong>, chọn loại nội dung muốn cập nhật, và Pathauto sẽ xử lý phần còn lại.<br>&nbsp;</p><img src="/sites/default/files/inline-images/image_2.png" data-entity-uuid="2f4f6d97-9d2f-4d27-97bd-00e716d28a59" data-entity-type="file" alt="pathauto Drupal bulk generate" width="555" height="618" data-align="center"><p>Qua bài viết này, hy vọng bạn đã có thêm một công cụ hữu ích trong bộ sưu tập Drupal của mình. Pathauto không chỉ giúp tạo ra các URL thân thiện và dễ nhớ mà còn đóng một vai trò quan trọng trong việc tối ưu hóa SEO cho website của bạn. Hãy bắt đầu áp dụng ngay hôm nay để khám phá những lợi ích mà nó mang lại!</p>'
+      value: '<p>Xin chào quý đọc giả. Hôm nay, chúng ta sẽ cùng khám phá một trong những công cụ không thể thiếu cho việc quản lý URL trên Drupal: Module <a href="https://www.drupal.org/project/pathauto">Pathauto</a>. Đây là một giải pháp tối ưu giúp tạo ra các bí danh (alias) tự động cho nội dung trên trang web của bạn, mang lại một cấu trúc URL thân thiện hơn cho cả người dùng lẫn công cụ tìm kiếm.</p>'
       format: full_html
       summary: ''
   comment:
     -
       status: 2
-      cid: 0
-      last_comment_timestamp: 1712378980
-      last_comment_name: ''
-      last_comment_uid: 1
-      comment_count: 0
+      cid: 4
+      last_comment_timestamp: 1712387319
+      last_comment_name: 'Dương Văn Vĩnh'
+      last_comment_uid: 0
+      comment_count: 4
+  field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ac2dca93-015b-4969-b162-a4d76ba28bfe
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712540758
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_text:
+            -
+              value: '<p>Xin chào quý đọc giả. Hôm nay, chúng ta sẽ cùng khám phá một trong những công cụ không thể thiếu cho việc quản lý URL trên Drupal: Module <a href="https://www.drupal.org/project/pathauto">Pathauto</a>. Đây là một giải pháp tối ưu giúp tạo ra các bí danh (alias) tự động cho nội dung trên trang web của bạn, mang lại một cấu trúc URL thân thiện hơn cho cả người dùng lẫn công cụ tìm kiếm.</p><p>Trong Drupal, mặc định, mỗi phần nội dung được gán một đường dẫn dựa trên ID, chẳng hạn như <strong>/node/1</strong> hay <strong>/taxonomy/term/3</strong>. Tuy nhiên, để tăng cường tính dễ đọc và tối ưu hóa cho SEO, việc tạo ra các alias URL là vô cùng cần thiết. Điều này có thể thực hiện thủ công mỗi khi đăng tải nội dung hoặc tự động hóa qua Module Pathauto, một công cụ mạnh mẽ mà bất kỳ người quản trị Drupal nào cũng nên biết đến.</p><p>Khi bạn đã hoàn tất việc cài đặt Pathauto, bạn sẽ được chuyển hướng đến mục cấu hình qua đường dẫn <strong>/admin/config/search/path/patterns</strong> để thiết lập các mẫu URL tự động (patterns). Tại đây, bạn có thể định nghĩa các quy tắc đặc biệt để Pathauto tự động sinh ra alias cho từng loại nội dung. Chẳng hạn, bạn có thể tạo một quy tắc để mỗi node mới được tạo ra sẽ tự động có một URL dạng <strong>[node:title].html</strong>.</p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6d614913-a150-4d48-a64c-b8f21dc1fa0e
+          bundle: bp_image
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712540773
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_image_field:
+            -
+              entity: dc58358b-ab71-44da-b477-69546a2ccc3e
+              alt: 'pathauto drupal pattern'
+              title: ''
+              width: 557
+              height: 619
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8991136e-7df4-47f1-81f6-bef9edaa2f54
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712540986
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_text:
+            -
+              value: '<p>Giả sử, bạn vừa tạo một bài viết với tiêu đề "Cài đặt Drupal cơ bản". Với quy tắc đã được thiết lập, URL của bài viết này sẽ trở thành <strong>/cai-dat-drupal-co-ban.html</strong>, giúp người dùng dễ dàng nhớ và truy cập, đồng thời tăng khả năng xuất hiện trên các công cụ tìm kiếm.</p><p>Đối với những nội dung đã tồn tại mà chưa có alias, hoặc bạn muốn tạo alias mới cho chúng, Pathauto cung cấp một tính năng mạnh mẽ cho phép bạn thực hiện việc này hàng loạt. Bạn chỉ cần truy cập vào <strong>/admin/config/search/path/update_bulk</strong>, chọn loại nội dung muốn cập nhật, và Pathauto sẽ xử lý phần còn lại.</p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3527e3cb-1482-4ec9-9d95-45c8d7a15567
+          bundle: bp_image
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712540993
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_image_field:
+            -
+              entity: 0f029eca-c95e-460e-947e-93471b5643ac
+              alt: 'pathauto drupal bulk generate'
+              title: ''
+              width: 555
+              height: 618
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7a4f876d-ec49-4780-911f-0de0637af4ef
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712541024
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_text:
+            -
+              value: '<p>Qua bài viết này, hy vọng bạn đã có thêm một công cụ hữu ích trong bộ sưu tập Drupal của mình. Pathauto không chỉ giúp tạo ra các URL thân thiện và dễ nhớ mà còn đóng một vai trò quan trọng trong việc tối ưu hóa SEO cho website của bạn. Hãy bắt đầu áp dụng ngay hôm nay để khám phá những lợi ích mà nó mang lại!</p>'
+              format: basic_html
   field_image:
     -
       entity: e72449c4-4721-410e-9f1d-57939cb97f4e

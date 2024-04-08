@@ -55,7 +55,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html'
+        href: 'https://tuhocdrupal.blog/ap-dung-ban-va-hieu-qua-trong-drupal-huong-dan-su-dung-cweaganscomposer-patches.html'
     -
       tag: meta
       attributes:

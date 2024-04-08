@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: d236bb25-e24c-4c07-8044-afd4843b71f1
+  uuid: 0f029eca-c95e-460e-947e-93471b5643ac
   default_langcode: vi
 default:
   uid:
@@ -9,19 +9,19 @@ default:
       target_id: 1
   filename:
     -
-      value: 'pathauto pattern.png'
+      value: 'pathauto bulk generate.png'
   uri:
     -
-      value: 'public://2024-04/pathauto pattern.png'
+      value: 'public://2024-04/pathauto bulk generate.png'
   filemime:
     -
       value: image/png
   filesize:
     -
-      value: 59264
+      value: 85230
   status:
     -
       value: true
   created:
     -
-      value: 1712483192
+      value: 1712541013

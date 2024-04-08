@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/bootstrapaccordion.tag'
+        href: 'https://tuhocdrupal.blog/bootstrapaccordion.tag'
     -
       tag: meta
       attributes:

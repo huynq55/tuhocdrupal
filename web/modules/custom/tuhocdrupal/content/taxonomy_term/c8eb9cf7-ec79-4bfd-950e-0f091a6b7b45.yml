@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/paragraphtypes.tag'
+        href: 'https://tuhocdrupal.blog/paragraphtypes.tag'
     -
       tag: meta
       attributes:

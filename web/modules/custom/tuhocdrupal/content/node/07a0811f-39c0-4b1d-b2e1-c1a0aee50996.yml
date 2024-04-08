@@ -57,7 +57,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/cai-dat-drupal-co-ban.html'
+        href: 'https://tuhocdrupal.blog/cai-dat-drupal-co-ban.html'
     -
       tag: meta
       attributes:

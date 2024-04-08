@@ -30,7 +30,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'http://tuhocdrupal.localhost/bootstrapcarousel.tag'
+        href: 'https://tuhocdrupal.blog/bootstrapcarousel.tag'
     -
       tag: meta
       attributes:
