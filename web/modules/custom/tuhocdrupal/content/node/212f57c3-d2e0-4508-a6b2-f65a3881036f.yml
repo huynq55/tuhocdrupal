@@ -77,12 +77,37 @@ default:
   comment:
     -
       status: 2
-      cid: 0
-      last_comment_timestamp: 1712417241
-      last_comment_name: ''
-      last_comment_uid: 1
-      comment_count: 0
+      cid: 5
+      last_comment_timestamp: 1712479720
+      last_comment_name: 'Quang Huy'
+      last_comment_uid: 0
+      comment_count: 1
   field_bp_reference:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 349c6d6c-75f1-4eeb-a7c2-7106481d39a4
+          bundle: bp_simple
+          default_langcode: vi
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1712556093
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          bp_text:
+            -
+              value: '<p>Chào mừng bạn đến với bài viết giới thiệu về module Bootstrap Paragraphs cho Drupal! Trong bài viết này, chúng tôi sẽ không đi sâu vào lý thuyết hay phức tạp kỹ thuật. Thay vào đó, chúng tôi muốn trực tiếp đưa bạn vào thế giới của Bootstrap Paragraphs bằng cách thực tế nhất: showcase. Từ hình ảnh đến video, từ slider đến block văn bản, bạn sẽ có cơ hội khám phá các loại đoạn văn có sẵn mà module này mang lại, giúp việc tạo lập nội dung trở nên linh hoạt và đẹp mắt hơn bao giờ hết. Hãy cùng chúng tôi bắt đầu!</p>'
+              format: basic_html
     -
       entity:
         _meta:
@@ -678,9 +703,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           bp_column_content:
             -
               entity:
@@ -700,9 +722,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   bp_header:
                     -
                       value: 'Column 3 1'
@@ -724,9 +743,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   bp_header:
                     -
                       value: 'Column 3 2'
@@ -748,9 +764,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   bp_header:
                     -
                       value: 'Column 3 3'
@@ -772,9 +785,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   bp_header:
                     -
                       value: 'Column 3 4'
