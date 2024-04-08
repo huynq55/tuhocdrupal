@@ -205,7 +205,7 @@ default:
               value: {  }
           bp_text:
             -
-              value: '<p>Các vai trò người dùng được chọn sẽ hiển thị trong tab quyền của từng node nội dung. Bạn có quyền ẩn đi một số vai trò không mong muốn xuất hiện trong tab này bằng cách không chọn chúng trong cài đặt. Ngoài ra, bạn cũng có thể đặt tên hiển thị (biệt danh) cho mỗi vai trò, giúp người dùng cuối dễ dàng hiểu và nhận diện, cùng với khả năng sắp xếp các vai trò theo ý muốn. Điều này giúp tạo ra một cách tiếp cận dễ dàng và thân thiện hơn, đặc biệt nếu tên máy của các vai trò không thân thiện với người dùng cuối.</p>'
+              value: '<p>Lựa chọn này mang lại khả năng ghi đè cài đặt quyền dựa trên vai trò của người dùng đối với loại nội dung cụ thể cho một node nhất định. Chẳng hạn, khi lựa chọn vai trò "Anonymous", bạn có thể ghi đè quyền truy cập vào node đó dành cho vai trò "Anonymous", thay đổi so với quyền truy cập mặc định đã được định nghĩa cho loại nội dung đó.</p>'
               format: full_html
     -
       entity:
