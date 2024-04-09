@@ -6,7 +6,7 @@
       var $textInput = $('.view-search-content #edit-search-api-fulltext', context);
 
       // Ẩn nút tìm kiếm
-      $searchButton.hide();
+      $searchButton.addClass('d-none');
 
       // Tự động bấm nút tìm kiếm khi trang được tải
       $(document).ready(function () {
