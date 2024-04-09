@@ -10,6 +10,13 @@
           $('.view-search-content [id^="edit-submit-search-content"]').click();
         }
       });
+
+      // Sau khi click, đợi load xong trang rồi focus vào $textInput
+      $('.view-search-content [id^="edit-submit-search-content"]').on('click', function () {
+        $(document).ajaxComplete(function () {
+          $textInput.focus();
+        });
+      });
     }
   };
 })(jQuery, Drupal);
