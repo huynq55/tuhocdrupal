@@ -7,9 +7,7 @@
       $textInput.on('keyup', function () {
         var searchValue = $(this).val();
         if (searchValue.length >= 3) {
-          $('.view-search-content [id^="edit-submit-search-content"]').removeClass('d-none');
-        } else {
-          $('.view-search-content [id^="edit-submit-search-content"]').addClass('d-none');
+          $('.view-search-content [id^="edit-submit-search-content"]').click();
         }
       });
     }
