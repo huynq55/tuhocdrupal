@@ -3,7 +3,7 @@
     attach: function (context, settings) {
       // Hàm để ẩn nút tìm kiếm
       function hideSearchButton() {
-        var $searchButton = $('.view-search-content #edit-submit-search-content');
+        var $searchButton = $('.view-search-content [id^="edit-submit-search-content"]');
         if (!$searchButton.hasClass('d-none')) {
           $searchButton.addClass('d-none');
         }
@@ -21,14 +21,14 @@
 
       // Tự động bấm nút tìm kiếm khi trang được tải
       $(document).ready(function () {
-        $('.view-search-content #edit-submit-search-content').click();
+        $('.view-search-content [id^="edit-submit-search-content"]').click();
       });
 
       // Tự động tìm kiếm khi người dùng nhập ít nhất 3 ký tự
       $textInput.on('keyup', function () {
         var searchValue = $(this).val();
         if (searchValue.length >= 3) {
-          $('.view-search-content #edit-submit-search-content').click();
+          $('.view-search-content [id^="edit-submit-search-content"]').click();
         }
       });
     }
