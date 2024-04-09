@@ -2,4 +2,7 @@
   width: 150px;
   height: 150px; }
 
+.view-search-content [id^="edit-submit-search-content"] {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
