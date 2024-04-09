@@ -7,7 +7,6 @@ dependencies:
     - comment
     - contact
     - filter
-    - search
     - system
 id: anonymous
 label: 'Người dùng nặc danh'
@@ -19,6 +18,5 @@ permissions:
   - 'access site-wide contact form'
   - 'edit own comments'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'use text format restricted_html'
