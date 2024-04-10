@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - search_api.index.default_index
+    - taxonomy.vocabulary.tags
   module:
     - search_api
 id: search_content
@@ -88,7 +89,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Tìm kiếm'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -163,6 +164,54 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+        field_tags:
+          id: field_tags
+          table: search_api_index_default_index
+          field: field_tags
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_op
+            label: 'Thẻ đánh dấu'
+            description: ''
+            use_operator: false
+            operator: field_tags_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tags
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: tags
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups: {  }
@@ -213,7 +262,7 @@ display:
     display_options:
       display_extenders:
         library_in_views_display_extender:
-          attach_library: tuhocdrupal/pressSearchButton
+          attach_library: ''
       path: search/content
     cache_metadata:
       max-age: -1
