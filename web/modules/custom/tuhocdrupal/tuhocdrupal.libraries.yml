@@ -1,2 +1,3 @@
-js:
-  js/press-search-button.js: {}
+pressSearchButton:
+  js:
+    js/press-search-button.js: {}
