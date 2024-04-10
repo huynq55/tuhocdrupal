@@ -16,6 +16,7 @@ dependencies:
   - bootstrap_paragraphs
   - google_analytics
   - search_api_db_defaults
+  - views_attach_library
 default_content:
   file:
     - b5aaea2e-9da6-4760-997b-49e9e453677e

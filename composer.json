@@ -31,6 +31,7 @@
         "drupal/redis": "^1.7",
         "drupal/search_api": "^1.34",
         "drupal/simple_sitemap": "^4.1",
+        "drupal/views_attach_library": "^2.0",
         "drupal/views_bulk_operations": "^4.2",
         "drush/drush": "^12.5"
     },
