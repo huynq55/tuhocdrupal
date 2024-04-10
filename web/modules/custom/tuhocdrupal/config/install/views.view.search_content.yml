@@ -59,15 +59,15 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        random:
-          id: random
-          table: views
-          field: random
+        created:
+          id: created
+          table: search_api_index_default_index
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: random
-          order: ASC
+          plugin_id: search_api
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -104,7 +104,7 @@ display:
               content_editor: '0'
               administrator: '0'
             expose_fields: false
-            placeholder: 'Bấm tìm kiếm để hiển thị tất cả bài viết'
+            placeholder: 'Nhập từ khóa tìm kiếm.'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
           is_grouped: false
@@ -179,6 +179,8 @@ display:
         type: search_api_query
         options: {  }
       relationships: {  }
+      css_class: view_search_content
+      use_ajax: true
       header:
         result:
           id: result
@@ -193,7 +195,7 @@ display:
       footer: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
@@ -209,10 +211,12 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        library_in_views_display_extender:
+          attach_library: tuhocdrupal/pressSearchButton
       path: search/content
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
